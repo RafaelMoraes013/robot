@@ -14,8 +14,8 @@ Login com sucesso E-Teorika
                           
         Select From List By Label         id:entidade             CFC
         Select From List By Label         id:local                 MA
-        Input Text                        id:usuario               maranhao@cfctreinamento
-        Input Text                        id:senha                 123456
+        Input Text                        id:usuario               xxxxxxx@xxxxxxxxxx
+        Input Text                        id:senha                 xxxxxx
 
         Click Element                      class:btn
         Set Selenium Implicit Wait          5
@@ -28,8 +28,8 @@ Login invalido
                           
         Select From List By Label         id:entidade             CFC
         Select From List By Label         id:local                 MA
-        Input Text                        id:usuario               maranhao@cfctreinamento
-        Input Text                        id:senha                 1234567
+        Input Text                        id:usuario               xxxxxxx@xxxxxxxxxx
+        Input Text                        id:senha                  xxxxxxx
 
         Click Element                     class:btn
         
