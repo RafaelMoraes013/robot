@@ -1,0 +1,2775 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 3.2.1 (Python 3.8.3 on win32)" generated="20201203 10:28:19.704" rpa="false">
+<suite id="s1" name="Esperas" source="C:\robot\esperas\esperas.robot">
+<test id="s1-t1" name="Exemplo 01: Teste lidando com o timeout do teste">
+<kw name="Simular espera do teste">
+<arguments>
+<arg>5s</arg>
+</arguments>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>${TEMPO}</arg>
+</arguments>
+<msg timestamp="20201203 10:28:21.736" level="FAIL">Test timeout 2 seconds exceeded.</msg>
+<status status="FAIL" starttime="20201203 10:28:19.736" endtime="20201203 10:28:21.736"></status>
+</kw>
+<status status="FAIL" starttime="20201203 10:28:19.736" endtime="20201203 10:28:21.737"></status>
+</kw>
+<kw name="Teardown do meu teste" type="teardown">
+<kw name="Run Keyword If Timeout Occurred" library="BuiltIn">
+<doc>Runs the given keyword if either a test or a keyword timeout has occurred.</doc>
+<arguments>
+<arg>Log</arg>
+<arg>Esse teste demorou demais, possível problema de performance!</arg>
+</arguments>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>Esse teste demorou demais, possível problema de performance!</arg>
+</arguments>
+<msg timestamp="20201203 10:28:21.740" level="INFO">Esse teste demorou demais, possível problema de performance!</msg>
+<status status="PASS" starttime="20201203 10:28:21.740" endtime="20201203 10:28:21.740"></status>
+</kw>
+<status status="PASS" starttime="20201203 10:28:21.739" endtime="20201203 10:28:21.740"></status>
+</kw>
+<status status="PASS" starttime="20201203 10:28:21.738" endtime="20201203 10:28:21.741"></status>
+</kw>
+<timeout value="2 seconds"></timeout>
+<status status="FAIL" starttime="20201203 10:28:19.735" endtime="20201203 10:28:21.741" critical="yes">Test timeout 2 seconds exceeded.</status>
+</test>
+<test id="s1-t2" name="Exemplo 02: Teste de espera">
+<kw name="Esperar uma keyword obter sucesso!">
+<kw name="Wait Until Keyword Succeeds" library="BuiltIn">
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<arguments>
+<arg>60x</arg>
+<arg>1 seconds</arg>
+<arg>Essa keyword só passa se estivermos no segundo 15!</arg>
+</arguments>
+<kw name="Essa keyword só passa se estivermos no segundo 15!">
+<kw name="Get Current Date" library="DateTime">
+<doc>Returns current local or UTC time with an optional increment.</doc>
+<assign>
+<var>${HORA_ATUAL}</var>
+</assign>
+<msg timestamp="20201203 10:28:21.749" level="INFO">${HORA_ATUAL} = 2020-12-03 10:28:21.748</msg>
+<status status="PASS" starttime="20201203 10:28:21.747" endtime="20201203 10:28:21.749"></status>
+</kw>
+<kw name="Convert Date" library="DateTime">
+<doc>Converts between supported `date formats`.</doc>
+<arguments>
+<arg>${HORA_ATUAL}</arg>
+<arg>datetime</arg>
+</arguments>
+<assign>
+<var>${HORA_ATUAL}</var>
+</assign>
+<msg timestamp="20201203 10:28:21.761" level="INFO">${HORA_ATUAL} = 2020-12-03 10:28:21.748000</msg>
+<status status="PASS" starttime="20201203 10:28:21.750" endtime="20201203 10:28:21.761"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>Hora atual: ${HORA_ATUAL.hour}\nMinuto atual: ${HORA_ATUAL.minute}\nSegundo atual: ${HORA_ATUAL.second}</arg>
+</arguments>
+<msg timestamp="20201203 10:28:21.764" level="INFO">Hora atual: 10
+Minuto atual: 28
+Segundo atual: 21</msg>
+<status status="PASS" starttime="20201203 10:28:21.761" endtime="20201203 10:28:21.764"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>"${HORA_ATUAL.second}"!="15"</arg>
+<arg>Fail</arg>
+<arg>msg=Ainda não estamos no segundo 15!!</arg>
+</arguments>
+<kw name="Fail" library="BuiltIn">
+<doc>Fails the test with the given message and optionally alters its tags.</doc>
+<arguments>
+<arg>msg=Ainda não estamos no segundo 15!!</arg>
+</arguments>
+<msg timestamp="20201203 10:28:21.768" level="FAIL">Ainda não estamos no segundo 15!!</msg>
+<status status="FAIL" starttime="20201203 10:28:21.767" endtime="20201203 10:28:21.769"></status>
+</kw>
+<status status="FAIL" starttime="20201203 10:28:21.765" endtime="20201203 10:28:21.769"></status>
+</kw>
+<status status="FAIL" starttime="20201203 10:28:21.747" endtime="20201203 10:28:21.769"></status>
+</kw>
+<kw name="Essa keyword só passa se estivermos no segundo 15!">
+<kw name="Get Current Date" library="DateTime">
+<doc>Returns current local or UTC time with an optional increment.</doc>
+<assign>
+<var>${HORA_ATUAL}</var>
+</assign>
+<msg timestamp="20201203 10:28:22.775" level="INFO">${HORA_ATUAL} = 2020-12-03 10:28:22.775</msg>
+<status status="PASS" starttime="20201203 10:28:22.772" endtime="20201203 10:28:22.776"></status>
+</kw>
+<kw name="Convert Date" library="DateTime">
+<doc>Converts between supported `date formats`.</doc>
+<arguments>
+<arg>${HORA_ATUAL}</arg>
+<arg>datetime</arg>
+</arguments>
+<assign>
+<var>${HORA_ATUAL}</var>
+</assign>
+<msg timestamp="20201203 10:28:22.778" level="INFO">${HORA_ATUAL} = 2020-12-03 10:28:22.775000</msg>
+<status status="PASS" starttime="20201203 10:28:22.776" endtime="20201203 10:28:22.779"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>Hora atual: ${HORA_ATUAL.hour}\nMinuto atual: ${HORA_ATUAL.minute}\nSegundo atual: ${HORA_ATUAL.second}</arg>
+</arguments>
+<msg timestamp="20201203 10:28:22.783" level="INFO">Hora atual: 10
+Minuto atual: 28
+Segundo atual: 22</msg>
+<status status="PASS" starttime="20201203 10:28:22.779" endtime="20201203 10:28:22.784"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>"${HORA_ATUAL.second}"!="15"</arg>
+<arg>Fail</arg>
+<arg>msg=Ainda não estamos no segundo 15!!</arg>
+</arguments>
+<kw name="Fail" library="BuiltIn">
+<doc>Fails the test with the given message and optionally alters its tags.</doc>
+<arguments>
+<arg>msg=Ainda não estamos no segundo 15!!</arg>
+</arguments>
+<msg timestamp="20201203 10:28:22.789" level="FAIL">Ainda não estamos no segundo 15!!</msg>
+<status status="FAIL" starttime="20201203 10:28:22.787" endtime="20201203 10:28:22.789"></status>
+</kw>
+<status status="FAIL" starttime="20201203 10:28:22.785" endtime="20201203 10:28:22.790"></status>
+</kw>
+<status status="FAIL" starttime="20201203 10:28:22.770" endtime="20201203 10:28:22.790"></status>
+</kw>
+<kw name="Essa keyword só passa se estivermos no segundo 15!">
+<kw name="Get Current Date" library="DateTime">
+<doc>Returns current local or UTC time with an optional increment.</doc>
+<assign>
+<var>${HORA_ATUAL}</var>
+</assign>
+<msg timestamp="20201203 10:28:23.793" level="INFO">${HORA_ATUAL} = 2020-12-03 10:28:23.793</msg>
+<status status="PASS" starttime="20201203 10:28:23.791" endtime="20201203 10:28:23.793"></status>
+</kw>
+<kw name="Convert Date" library="DateTime">
+<doc>Converts between supported `date formats`.</doc>
+<arguments>
+<arg>${HORA_ATUAL}</arg>
+<arg>datetime</arg>
+</arguments>
+<assign>
+<var>${HORA_ATUAL}</var>
+</assign>
+<msg timestamp="20201203 10:28:23.795" level="INFO">${HORA_ATUAL} = 2020-12-03 10:28:23.793000</msg>
+<status status="PASS" starttime="20201203 10:28:23.794" endtime="20201203 10:28:23.795"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>Hora atual: ${HORA_ATUAL.hour}\nMinuto atual: ${HORA_ATUAL.minute}\nSegundo atual: ${HORA_ATUAL.second}</arg>
+</arguments>
+<msg timestamp="20201203 10:28:23.798" level="INFO">Hora atual: 10
+Minuto atual: 28
+Segundo atual: 23</msg>
+<status status="PASS" starttime="20201203 10:28:23.795" endtime="20201203 10:28:23.798"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>"${HORA_ATUAL.second}"!="15"</arg>
+<arg>Fail</arg>
+<arg>msg=Ainda não estamos no segundo 15!!</arg>
+</arguments>
+<kw name="Fail" library="BuiltIn">
+<doc>Fails the test with the given message and optionally alters its tags.</doc>
+<arguments>
+<arg>msg=Ainda não estamos no segundo 15!!</arg>
+</arguments>
+<msg timestamp="20201203 10:28:23.802" level="FAIL">Ainda não estamos no segundo 15!!</msg>
+<status status="FAIL" starttime="20201203 10:28:23.800" endtime="20201203 10:28:23.802"></status>
+</kw>
+<status status="FAIL" starttime="20201203 10:28:23.799" endtime="20201203 10:28:23.802"></status>
+</kw>
+<status status="FAIL" starttime="20201203 10:28:23.790" endtime="20201203 10:28:23.802"></status>
+</kw>
+<kw name="Essa keyword só passa se estivermos no segundo 15!">
+<kw name="Get Current Date" library="DateTime">
+<doc>Returns current local or UTC time with an optional increment.</doc>
+<assign>
+<var>${HORA_ATUAL}</var>
+</assign>
+<msg timestamp="20201203 10:28:24.808" level="INFO">${HORA_ATUAL} = 2020-12-03 10:28:24.808</msg>
+<status status="PASS" starttime="20201203 10:28:24.806" endtime="20201203 10:28:24.809"></status>
+</kw>
+<kw name="Convert Date" library="DateTime">
+<doc>Converts between supported `date formats`.</doc>
+<arguments>
+<arg>${HORA_ATUAL}</arg>
+<arg>datetime</arg>
+</arguments>
+<assign>
+<var>${HORA_ATUAL}</var>
+</assign>
+<msg timestamp="20201203 10:28:24.817" level="INFO">${HORA_ATUAL} = 2020-12-03 10:28:24.808000</msg>
+<status status="PASS" starttime="20201203 10:28:24.809" endtime="20201203 10:28:24.817"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>Hora atual: ${HORA_ATUAL.hour}\nMinuto atual: ${HORA_ATUAL.minute}\nSegundo atual: ${HORA_ATUAL.second}</arg>
+</arguments>
+<msg timestamp="20201203 10:28:24.821" level="INFO">Hora atual: 10
+Minuto atual: 28
+Segundo atual: 24</msg>
+<status status="PASS" starttime="20201203 10:28:24.818" endtime="20201203 10:28:24.822"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>"${HORA_ATUAL.second}"!="15"</arg>
+<arg>Fail</arg>
+<arg>msg=Ainda não estamos no segundo 15!!</arg>
+</arguments>
+<kw name="Fail" library="BuiltIn">
+<doc>Fails the test with the given message and optionally alters its tags.</doc>
+<arguments>
+<arg>msg=Ainda não estamos no segundo 15!!</arg>
+</arguments>
+<msg timestamp="20201203 10:28:24.829" level="FAIL">Ainda não estamos no segundo 15!!</msg>
+<status status="FAIL" starttime="20201203 10:28:24.824" endtime="20201203 10:28:24.829"></status>
+</kw>
+<status status="FAIL" starttime="20201203 10:28:24.822" endtime="20201203 10:28:24.830"></status>
+</kw>
+<status status="FAIL" starttime="20201203 10:28:24.803" endtime="20201203 10:28:24.830"></status>
+</kw>
+<kw name="Essa keyword só passa se estivermos no segundo 15!">
+<kw name="Get Current Date" library="DateTime">
+<doc>Returns current local or UTC time with an optional increment.</doc>
+<assign>
+<var>${HORA_ATUAL}</var>
+</assign>
+<msg timestamp="20201203 10:28:25.834" level="INFO">${HORA_ATUAL} = 2020-12-03 10:28:25.834</msg>
+<status status="PASS" starttime="20201203 10:28:25.833" endtime="20201203 10:28:25.834"></status>
+</kw>
+<kw name="Convert Date" library="DateTime">
+<doc>Converts between supported `date formats`.</doc>
+<arguments>
+<arg>${HORA_ATUAL}</arg>
+<arg>datetime</arg>
+</arguments>
+<assign>
+<var>${HORA_ATUAL}</var>
+</assign>
+<msg timestamp="20201203 10:28:25.836" level="INFO">${HORA_ATUAL} = 2020-12-03 10:28:25.834000</msg>
+<status status="PASS" starttime="20201203 10:28:25.835" endtime="20201203 10:28:25.836"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>Hora atual: ${HORA_ATUAL.hour}\nMinuto atual: ${HORA_ATUAL.minute}\nSegundo atual: ${HORA_ATUAL.second}</arg>
+</arguments>
+<msg timestamp="20201203 10:28:25.839" level="INFO">Hora atual: 10
+Minuto atual: 28
+Segundo atual: 25</msg>
+<status status="PASS" starttime="20201203 10:28:25.837" endtime="20201203 10:28:25.840"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>"${HORA_ATUAL.second}"!="15"</arg>
+<arg>Fail</arg>
+<arg>msg=Ainda não estamos no segundo 15!!</arg>
+</arguments>
+<kw name="Fail" library="BuiltIn">
+<doc>Fails the test with the given message and optionally alters its tags.</doc>
+<arguments>
+<arg>msg=Ainda não estamos no segundo 15!!</arg>
+</arguments>
+<msg timestamp="20201203 10:28:25.842" level="FAIL">Ainda não estamos no segundo 15!!</msg>
+<status status="FAIL" starttime="20201203 10:28:25.841" endtime="20201203 10:28:25.842"></status>
+</kw>
+<status status="FAIL" starttime="20201203 10:28:25.840" endtime="20201203 10:28:25.843"></status>
+</kw>
+<status status="FAIL" starttime="20201203 10:28:25.832" endtime="20201203 10:28:25.843"></status>
+</kw>
+<kw name="Essa keyword só passa se estivermos no segundo 15!">
+<kw name="Get Current Date" library="DateTime">
+<doc>Returns current local or UTC time with an optional increment.</doc>
+<assign>
+<var>${HORA_ATUAL}</var>
+</assign>
+<msg timestamp="20201203 10:28:26.849" level="INFO">${HORA_ATUAL} = 2020-12-03 10:28:26.847</msg>
+<status status="PASS" starttime="20201203 10:28:26.846" endtime="20201203 10:28:26.849"></status>
+</kw>
+<kw name="Convert Date" library="DateTime">
+<doc>Converts between supported `date formats`.</doc>
+<arguments>
+<arg>${HORA_ATUAL}</arg>
+<arg>datetime</arg>
+</arguments>
+<assign>
+<var>${HORA_ATUAL}</var>
+</assign>
+<msg timestamp="20201203 10:28:26.852" level="INFO">${HORA_ATUAL} = 2020-12-03 10:28:26.847000</msg>
+<status status="PASS" starttime="20201203 10:28:26.849" endtime="20201203 10:28:26.853"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>Hora atual: ${HORA_ATUAL.hour}\nMinuto atual: ${HORA_ATUAL.minute}\nSegundo atual: ${HORA_ATUAL.second}</arg>
+</arguments>
+<msg timestamp="20201203 10:28:26.857" level="INFO">Hora atual: 10
+Minuto atual: 28
+Segundo atual: 26</msg>
+<status status="PASS" starttime="20201203 10:28:26.853" endtime="20201203 10:28:26.857"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>"${HORA_ATUAL.second}"!="15"</arg>
+<arg>Fail</arg>
+<arg>msg=Ainda não estamos no segundo 15!!</arg>
+</arguments>
+<kw name="Fail" library="BuiltIn">
+<doc>Fails the test with the given message and optionally alters its tags.</doc>
+<arguments>
+<arg>msg=Ainda não estamos no segundo 15!!</arg>
+</arguments>
+<msg timestamp="20201203 10:28:26.864" level="FAIL">Ainda não estamos no segundo 15!!</msg>
+<status status="FAIL" starttime="20201203 10:28:26.861" endtime="20201203 10:28:26.864"></status>
+</kw>
+<status status="FAIL" starttime="20201203 10:28:26.858" endtime="20201203 10:28:26.865"></status>
+</kw>
+<status status="FAIL" starttime="20201203 10:28:26.844" endtime="20201203 10:28:26.866"></status>
+</kw>
+<kw name="Essa keyword só passa se estivermos no segundo 15!">
+<kw name="Get Current Date" library="DateTime">
+<doc>Returns current local or UTC time with an optional increment.</doc>
+<assign>
+<var>${HORA_ATUAL}</var>
+</assign>
+<msg timestamp="20201203 10:28:27.871" level="INFO">${HORA_ATUAL} = 2020-12-03 10:28:27.870</msg>
+<status status="PASS" starttime="20201203 10:28:27.869" endtime="20201203 10:28:27.871"></status>
+</kw>
+<kw name="Convert Date" library="DateTime">
+<doc>Converts between supported `date formats`.</doc>
+<arguments>
+<arg>${HORA_ATUAL}</arg>
+<arg>datetime</arg>
+</arguments>
+<assign>
+<var>${HORA_ATUAL}</var>
+</assign>
+<msg timestamp="20201203 10:28:27.875" level="INFO">${HORA_ATUAL} = 2020-12-03 10:28:27.870000</msg>
+<status status="PASS" starttime="20201203 10:28:27.872" endtime="20201203 10:28:27.875"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>Hora atual: ${HORA_ATUAL.hour}\nMinuto atual: ${HORA_ATUAL.minute}\nSegundo atual: ${HORA_ATUAL.second}</arg>
+</arguments>
+<msg timestamp="20201203 10:28:27.881" level="INFO">Hora atual: 10
+Minuto atual: 28
+Segundo atual: 27</msg>
+<status status="PASS" starttime="20201203 10:28:27.876" endtime="20201203 10:28:27.881"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>"${HORA_ATUAL.second}"!="15"</arg>
+<arg>Fail</arg>
+<arg>msg=Ainda não estamos no segundo 15!!</arg>
+</arguments>
+<kw name="Fail" library="BuiltIn">
+<doc>Fails the test with the given message and optionally alters its tags.</doc>
+<arguments>
+<arg>msg=Ainda não estamos no segundo 15!!</arg>
+</arguments>
+<msg timestamp="20201203 10:28:27.889" level="FAIL">Ainda não estamos no segundo 15!!</msg>
+<status status="FAIL" starttime="20201203 10:28:27.884" endtime="20201203 10:28:27.889"></status>
+</kw>
+<status status="FAIL" starttime="20201203 10:28:27.882" endtime="20201203 10:28:27.890"></status>
+</kw>
+<status status="FAIL" starttime="20201203 10:28:27.867" endtime="20201203 10:28:27.891"></status>
+</kw>
+<kw name="Essa keyword só passa se estivermos no segundo 15!">
+<kw name="Get Current Date" library="DateTime">
+<doc>Returns current local or UTC time with an optional increment.</doc>
+<assign>
+<var>${HORA_ATUAL}</var>
+</assign>
+<msg timestamp="20201203 10:28:28.899" level="INFO">${HORA_ATUAL} = 2020-12-03 10:28:28.898</msg>
+<status status="PASS" starttime="20201203 10:28:28.896" endtime="20201203 10:28:28.899"></status>
+</kw>
+<kw name="Convert Date" library="DateTime">
+<doc>Converts between supported `date formats`.</doc>
+<arguments>
+<arg>${HORA_ATUAL}</arg>
+<arg>datetime</arg>
+</arguments>
+<assign>
+<var>${HORA_ATUAL}</var>
+</assign>
+<msg timestamp="20201203 10:28:28.903" level="INFO">${HORA_ATUAL} = 2020-12-03 10:28:28.898000</msg>
+<status status="PASS" starttime="20201203 10:28:28.900" endtime="20201203 10:28:28.903"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>Hora atual: ${HORA_ATUAL.hour}\nMinuto atual: ${HORA_ATUAL.minute}\nSegundo atual: ${HORA_ATUAL.second}</arg>
+</arguments>
+<msg timestamp="20201203 10:28:28.909" level="INFO">Hora atual: 10
+Minuto atual: 28
+Segundo atual: 28</msg>
+<status status="PASS" starttime="20201203 10:28:28.904" endtime="20201203 10:28:28.909"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>"${HORA_ATUAL.second}"!="15"</arg>
+<arg>Fail</arg>
+<arg>msg=Ainda não estamos no segundo 15!!</arg>
+</arguments>
+<kw name="Fail" library="BuiltIn">
+<doc>Fails the test with the given message and optionally alters its tags.</doc>
+<arguments>
+<arg>msg=Ainda não estamos no segundo 15!!</arg>
+</arguments>
+<msg timestamp="20201203 10:28:28.916" level="FAIL">Ainda não estamos no segundo 15!!</msg>
+<status status="FAIL" starttime="20201203 10:28:28.913" endtime="20201203 10:28:28.917"></status>
+</kw>
+<status status="FAIL" starttime="20201203 10:28:28.911" endtime="20201203 10:28:28.917"></status>
+</kw>
+<status status="FAIL" starttime="20201203 10:28:28.894" endtime="20201203 10:28:28.918"></status>
+</kw>
+<kw name="Essa keyword só passa se estivermos no segundo 15!">
+<kw name="Get Current Date" library="DateTime">
+<doc>Returns current local or UTC time with an optional increment.</doc>
+<assign>
+<var>${HORA_ATUAL}</var>
+</assign>
+<msg timestamp="20201203 10:28:29.925" level="INFO">${HORA_ATUAL} = 2020-12-03 10:28:29.925</msg>
+<status status="PASS" starttime="20201203 10:28:29.921" endtime="20201203 10:28:29.925"></status>
+</kw>
+<kw name="Convert Date" library="DateTime">
+<doc>Converts between supported `date formats`.</doc>
+<arguments>
+<arg>${HORA_ATUAL}</arg>
+<arg>datetime</arg>
+</arguments>
+<assign>
+<var>${HORA_ATUAL}</var>
+</assign>
+<msg timestamp="20201203 10:28:29.929" level="INFO">${HORA_ATUAL} = 2020-12-03 10:28:29.925000</msg>
+<status status="PASS" starttime="20201203 10:28:29.925" endtime="20201203 10:28:29.929"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>Hora atual: ${HORA_ATUAL.hour}\nMinuto atual: ${HORA_ATUAL.minute}\nSegundo atual: ${HORA_ATUAL.second}</arg>
+</arguments>
+<msg timestamp="20201203 10:28:29.934" level="INFO">Hora atual: 10
+Minuto atual: 28
+Segundo atual: 29</msg>
+<status status="PASS" starttime="20201203 10:28:29.931" endtime="20201203 10:28:29.935"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>"${HORA_ATUAL.second}"!="15"</arg>
+<arg>Fail</arg>
+<arg>msg=Ainda não estamos no segundo 15!!</arg>
+</arguments>
+<kw name="Fail" library="BuiltIn">
+<doc>Fails the test with the given message and optionally alters its tags.</doc>
+<arguments>
+<arg>msg=Ainda não estamos no segundo 15!!</arg>
+</arguments>
+<msg timestamp="20201203 10:28:29.940" level="FAIL">Ainda não estamos no segundo 15!!</msg>
+<status status="FAIL" starttime="20201203 10:28:29.938" endtime="20201203 10:28:29.942"></status>
+</kw>
+<status status="FAIL" starttime="20201203 10:28:29.935" endtime="20201203 10:28:29.942"></status>
+</kw>
+<status status="FAIL" starttime="20201203 10:28:29.920" endtime="20201203 10:28:29.943"></status>
+</kw>
+<kw name="Essa keyword só passa se estivermos no segundo 15!">
+<kw name="Get Current Date" library="DateTime">
+<doc>Returns current local or UTC time with an optional increment.</doc>
+<assign>
+<var>${HORA_ATUAL}</var>
+</assign>
+<msg timestamp="20201203 10:28:30.948" level="INFO">${HORA_ATUAL} = 2020-12-03 10:28:30.947</msg>
+<status status="PASS" starttime="20201203 10:28:30.946" endtime="20201203 10:28:30.949"></status>
+</kw>
+<kw name="Convert Date" library="DateTime">
+<doc>Converts between supported `date formats`.</doc>
+<arguments>
+<arg>${HORA_ATUAL}</arg>
+<arg>datetime</arg>
+</arguments>
+<assign>
+<var>${HORA_ATUAL}</var>
+</assign>
+<msg timestamp="20201203 10:28:30.953" level="INFO">${HORA_ATUAL} = 2020-12-03 10:28:30.947000</msg>
+<status status="PASS" starttime="20201203 10:28:30.949" endtime="20201203 10:28:30.953"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>Hora atual: ${HORA_ATUAL.hour}\nMinuto atual: ${HORA_ATUAL.minute}\nSegundo atual: ${HORA_ATUAL.second}</arg>
+</arguments>
+<msg timestamp="20201203 10:28:30.957" level="INFO">Hora atual: 10
+Minuto atual: 28
+Segundo atual: 30</msg>
+<status status="PASS" starttime="20201203 10:28:30.954" endtime="20201203 10:28:30.958"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>"${HORA_ATUAL.second}"!="15"</arg>
+<arg>Fail</arg>
+<arg>msg=Ainda não estamos no segundo 15!!</arg>
+</arguments>
+<kw name="Fail" library="BuiltIn">
+<doc>Fails the test with the given message and optionally alters its tags.</doc>
+<arguments>
+<arg>msg=Ainda não estamos no segundo 15!!</arg>
+</arguments>
+<msg timestamp="20201203 10:28:30.963" level="FAIL">Ainda não estamos no segundo 15!!</msg>
+<status status="FAIL" starttime="20201203 10:28:30.960" endtime="20201203 10:28:30.964"></status>
+</kw>
+<status status="FAIL" starttime="20201203 10:28:30.958" endtime="20201203 10:28:30.964"></status>
+</kw>
+<status status="FAIL" starttime="20201203 10:28:30.944" endtime="20201203 10:28:30.965"></status>
+</kw>
+<kw name="Essa keyword só passa se estivermos no segundo 15!">
+<kw name="Get Current Date" library="DateTime">
+<doc>Returns current local or UTC time with an optional increment.</doc>
+<assign>
+<var>${HORA_ATUAL}</var>
+</assign>
+<msg timestamp="20201203 10:28:31.971" level="INFO">${HORA_ATUAL} = 2020-12-03 10:28:31.970</msg>
+<status status="PASS" starttime="20201203 10:28:31.968" endtime="20201203 10:28:31.971"></status>
+</kw>
+<kw name="Convert Date" library="DateTime">
+<doc>Converts between supported `date formats`.</doc>
+<arguments>
+<arg>${HORA_ATUAL}</arg>
+<arg>datetime</arg>
+</arguments>
+<assign>
+<var>${HORA_ATUAL}</var>
+</assign>
+<msg timestamp="20201203 10:28:31.977" level="INFO">${HORA_ATUAL} = 2020-12-03 10:28:31.970000</msg>
+<status status="PASS" starttime="20201203 10:28:31.972" endtime="20201203 10:28:31.977"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>Hora atual: ${HORA_ATUAL.hour}\nMinuto atual: ${HORA_ATUAL.minute}\nSegundo atual: ${HORA_ATUAL.second}</arg>
+</arguments>
+<msg timestamp="20201203 10:28:31.981" level="INFO">Hora atual: 10
+Minuto atual: 28
+Segundo atual: 31</msg>
+<status status="PASS" starttime="20201203 10:28:31.978" endtime="20201203 10:28:31.981"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>"${HORA_ATUAL.second}"!="15"</arg>
+<arg>Fail</arg>
+<arg>msg=Ainda não estamos no segundo 15!!</arg>
+</arguments>
+<kw name="Fail" library="BuiltIn">
+<doc>Fails the test with the given message and optionally alters its tags.</doc>
+<arguments>
+<arg>msg=Ainda não estamos no segundo 15!!</arg>
+</arguments>
+<msg timestamp="20201203 10:28:31.987" level="FAIL">Ainda não estamos no segundo 15!!</msg>
+<status status="FAIL" starttime="20201203 10:28:31.984" endtime="20201203 10:28:31.988"></status>
+</kw>
+<status status="FAIL" starttime="20201203 10:28:31.982" endtime="20201203 10:28:31.988"></status>
+</kw>
+<status status="FAIL" starttime="20201203 10:28:31.966" endtime="20201203 10:28:31.989"></status>
+</kw>
+<kw name="Essa keyword só passa se estivermos no segundo 15!">
+<kw name="Get Current Date" library="DateTime">
+<doc>Returns current local or UTC time with an optional increment.</doc>
+<assign>
+<var>${HORA_ATUAL}</var>
+</assign>
+<msg timestamp="20201203 10:28:32.995" level="INFO">${HORA_ATUAL} = 2020-12-03 10:28:32.994</msg>
+<status status="PASS" starttime="20201203 10:28:32.993" endtime="20201203 10:28:32.995"></status>
+</kw>
+<kw name="Convert Date" library="DateTime">
+<doc>Converts between supported `date formats`.</doc>
+<arguments>
+<arg>${HORA_ATUAL}</arg>
+<arg>datetime</arg>
+</arguments>
+<assign>
+<var>${HORA_ATUAL}</var>
+</assign>
+<msg timestamp="20201203 10:28:33.000" level="INFO">${HORA_ATUAL} = 2020-12-03 10:28:32.994000</msg>
+<status status="PASS" starttime="20201203 10:28:32.996" endtime="20201203 10:28:33.001"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>Hora atual: ${HORA_ATUAL.hour}\nMinuto atual: ${HORA_ATUAL.minute}\nSegundo atual: ${HORA_ATUAL.second}</arg>
+</arguments>
+<msg timestamp="20201203 10:28:33.005" level="INFO">Hora atual: 10
+Minuto atual: 28
+Segundo atual: 32</msg>
+<status status="PASS" starttime="20201203 10:28:33.002" endtime="20201203 10:28:33.006"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>"${HORA_ATUAL.second}"!="15"</arg>
+<arg>Fail</arg>
+<arg>msg=Ainda não estamos no segundo 15!!</arg>
+</arguments>
+<kw name="Fail" library="BuiltIn">
+<doc>Fails the test with the given message and optionally alters its tags.</doc>
+<arguments>
+<arg>msg=Ainda não estamos no segundo 15!!</arg>
+</arguments>
+<msg timestamp="20201203 10:28:33.012" level="FAIL">Ainda não estamos no segundo 15!!</msg>
+<status status="FAIL" starttime="20201203 10:28:33.008" endtime="20201203 10:28:33.012"></status>
+</kw>
+<status status="FAIL" starttime="20201203 10:28:33.006" endtime="20201203 10:28:33.012"></status>
+</kw>
+<status status="FAIL" starttime="20201203 10:28:32.991" endtime="20201203 10:28:33.013"></status>
+</kw>
+<kw name="Essa keyword só passa se estivermos no segundo 15!">
+<kw name="Get Current Date" library="DateTime">
+<doc>Returns current local or UTC time with an optional increment.</doc>
+<assign>
+<var>${HORA_ATUAL}</var>
+</assign>
+<msg timestamp="20201203 10:28:34.019" level="INFO">${HORA_ATUAL} = 2020-12-03 10:28:34.018</msg>
+<status status="PASS" starttime="20201203 10:28:34.016" endtime="20201203 10:28:34.019"></status>
+</kw>
+<kw name="Convert Date" library="DateTime">
+<doc>Converts between supported `date formats`.</doc>
+<arguments>
+<arg>${HORA_ATUAL}</arg>
+<arg>datetime</arg>
+</arguments>
+<assign>
+<var>${HORA_ATUAL}</var>
+</assign>
+<msg timestamp="20201203 10:28:34.023" level="INFO">${HORA_ATUAL} = 2020-12-03 10:28:34.018000</msg>
+<status status="PASS" starttime="20201203 10:28:34.019" endtime="20201203 10:28:34.024"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>Hora atual: ${HORA_ATUAL.hour}\nMinuto atual: ${HORA_ATUAL.minute}\nSegundo atual: ${HORA_ATUAL.second}</arg>
+</arguments>
+<msg timestamp="20201203 10:28:34.029" level="INFO">Hora atual: 10
+Minuto atual: 28
+Segundo atual: 34</msg>
+<status status="PASS" starttime="20201203 10:28:34.024" endtime="20201203 10:28:34.030"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>"${HORA_ATUAL.second}"!="15"</arg>
+<arg>Fail</arg>
+<arg>msg=Ainda não estamos no segundo 15!!</arg>
+</arguments>
+<kw name="Fail" library="BuiltIn">
+<doc>Fails the test with the given message and optionally alters its tags.</doc>
+<arguments>
+<arg>msg=Ainda não estamos no segundo 15!!</arg>
+</arguments>
+<msg timestamp="20201203 10:28:34.036" level="FAIL">Ainda não estamos no segundo 15!!</msg>
+<status status="FAIL" starttime="20201203 10:28:34.033" endtime="20201203 10:28:34.036"></status>
+</kw>
+<status status="FAIL" starttime="20201203 10:28:34.031" endtime="20201203 10:28:34.036"></status>
+</kw>
+<status status="FAIL" starttime="20201203 10:28:34.014" endtime="20201203 10:28:34.036"></status>
+</kw>
+<kw name="Essa keyword só passa se estivermos no segundo 15!">
+<kw name="Get Current Date" library="DateTime">
+<doc>Returns current local or UTC time with an optional increment.</doc>
+<assign>
+<var>${HORA_ATUAL}</var>
+</assign>
+<msg timestamp="20201203 10:28:35.046" level="INFO">${HORA_ATUAL} = 2020-12-03 10:28:35.045</msg>
+<status status="PASS" starttime="20201203 10:28:35.042" endtime="20201203 10:28:35.046"></status>
+</kw>
+<kw name="Convert Date" library="DateTime">
+<doc>Converts between supported `date formats`.</doc>
+<arguments>
+<arg>${HORA_ATUAL}</arg>
+<arg>datetime</arg>
+</arguments>
+<assign>
+<var>${HORA_ATUAL}</var>
+</assign>
+<msg timestamp="20201203 10:28:35.052" level="INFO">${HORA_ATUAL} = 2020-12-03 10:28:35.045000</msg>
+<status status="PASS" starttime="20201203 10:28:35.047" endtime="20201203 10:28:35.052"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>Hora atual: ${HORA_ATUAL.hour}\nMinuto atual: ${HORA_ATUAL.minute}\nSegundo atual: ${HORA_ATUAL.second}</arg>
+</arguments>
+<msg timestamp="20201203 10:28:35.055" level="INFO">Hora atual: 10
+Minuto atual: 28
+Segundo atual: 35</msg>
+<status status="PASS" starttime="20201203 10:28:35.053" endtime="20201203 10:28:35.055"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>"${HORA_ATUAL.second}"!="15"</arg>
+<arg>Fail</arg>
+<arg>msg=Ainda não estamos no segundo 15!!</arg>
+</arguments>
+<kw name="Fail" library="BuiltIn">
+<doc>Fails the test with the given message and optionally alters its tags.</doc>
+<arguments>
+<arg>msg=Ainda não estamos no segundo 15!!</arg>
+</arguments>
+<msg timestamp="20201203 10:28:35.058" level="FAIL">Ainda não estamos no segundo 15!!</msg>
+<status status="FAIL" starttime="20201203 10:28:35.057" endtime="20201203 10:28:35.058"></status>
+</kw>
+<status status="FAIL" starttime="20201203 10:28:35.055" endtime="20201203 10:28:35.058"></status>
+</kw>
+<status status="FAIL" starttime="20201203 10:28:35.038" endtime="20201203 10:28:35.059"></status>
+</kw>
+<kw name="Essa keyword só passa se estivermos no segundo 15!">
+<kw name="Get Current Date" library="DateTime">
+<doc>Returns current local or UTC time with an optional increment.</doc>
+<assign>
+<var>${HORA_ATUAL}</var>
+</assign>
+<msg timestamp="20201203 10:28:36.061" level="INFO">${HORA_ATUAL} = 2020-12-03 10:28:36.061</msg>
+<status status="PASS" starttime="20201203 10:28:36.060" endtime="20201203 10:28:36.061"></status>
+</kw>
+<kw name="Convert Date" library="DateTime">
+<doc>Converts between supported `date formats`.</doc>
+<arguments>
+<arg>${HORA_ATUAL}</arg>
+<arg>datetime</arg>
+</arguments>
+<assign>
+<var>${HORA_ATUAL}</var>
+</assign>
+<msg timestamp="20201203 10:28:36.062" level="INFO">${HORA_ATUAL} = 2020-12-03 10:28:36.061000</msg>
+<status status="PASS" starttime="20201203 10:28:36.061" endtime="20201203 10:28:36.062"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>Hora atual: ${HORA_ATUAL.hour}\nMinuto atual: ${HORA_ATUAL.minute}\nSegundo atual: ${HORA_ATUAL.second}</arg>
+</arguments>
+<msg timestamp="20201203 10:28:36.063" level="INFO">Hora atual: 10
+Minuto atual: 28
+Segundo atual: 36</msg>
+<status status="PASS" starttime="20201203 10:28:36.062" endtime="20201203 10:28:36.063"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>"${HORA_ATUAL.second}"!="15"</arg>
+<arg>Fail</arg>
+<arg>msg=Ainda não estamos no segundo 15!!</arg>
+</arguments>
+<kw name="Fail" library="BuiltIn">
+<doc>Fails the test with the given message and optionally alters its tags.</doc>
+<arguments>
+<arg>msg=Ainda não estamos no segundo 15!!</arg>
+</arguments>
+<msg timestamp="20201203 10:28:36.068" level="FAIL">Ainda não estamos no segundo 15!!</msg>
+<status status="FAIL" starttime="20201203 10:28:36.064" endtime="20201203 10:28:36.068"></status>
+</kw>
+<status status="FAIL" starttime="20201203 10:28:36.063" endtime="20201203 10:28:36.069"></status>
+</kw>
+<status status="FAIL" starttime="20201203 10:28:36.060" endtime="20201203 10:28:36.070"></status>
+</kw>
+<kw name="Essa keyword só passa se estivermos no segundo 15!">
+<kw name="Get Current Date" library="DateTime">
+<doc>Returns current local or UTC time with an optional increment.</doc>
+<assign>
+<var>${HORA_ATUAL}</var>
+</assign>
+<msg timestamp="20201203 10:28:37.076" level="INFO">${HORA_ATUAL} = 2020-12-03 10:28:37.076</msg>
+<status status="PASS" starttime="20201203 10:28:37.074" endtime="20201203 10:28:37.076"></status>
+</kw>
+<kw name="Convert Date" library="DateTime">
+<doc>Converts between supported `date formats`.</doc>
+<arguments>
+<arg>${HORA_ATUAL}</arg>
+<arg>datetime</arg>
+</arguments>
+<assign>
+<var>${HORA_ATUAL}</var>
+</assign>
+<msg timestamp="20201203 10:28:37.080" level="INFO">${HORA_ATUAL} = 2020-12-03 10:28:37.076000</msg>
+<status status="PASS" starttime="20201203 10:28:37.076" endtime="20201203 10:28:37.080"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>Hora atual: ${HORA_ATUAL.hour}\nMinuto atual: ${HORA_ATUAL.minute}\nSegundo atual: ${HORA_ATUAL.second}</arg>
+</arguments>
+<msg timestamp="20201203 10:28:37.085" level="INFO">Hora atual: 10
+Minuto atual: 28
+Segundo atual: 37</msg>
+<status status="PASS" starttime="20201203 10:28:37.081" endtime="20201203 10:28:37.085"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>"${HORA_ATUAL.second}"!="15"</arg>
+<arg>Fail</arg>
+<arg>msg=Ainda não estamos no segundo 15!!</arg>
+</arguments>
+<kw name="Fail" library="BuiltIn">
+<doc>Fails the test with the given message and optionally alters its tags.</doc>
+<arguments>
+<arg>msg=Ainda não estamos no segundo 15!!</arg>
+</arguments>
+<msg timestamp="20201203 10:28:37.091" level="FAIL">Ainda não estamos no segundo 15!!</msg>
+<status status="FAIL" starttime="20201203 10:28:37.087" endtime="20201203 10:28:37.092"></status>
+</kw>
+<status status="FAIL" starttime="20201203 10:28:37.085" endtime="20201203 10:28:37.092"></status>
+</kw>
+<status status="FAIL" starttime="20201203 10:28:37.072" endtime="20201203 10:28:37.093"></status>
+</kw>
+<kw name="Essa keyword só passa se estivermos no segundo 15!">
+<kw name="Get Current Date" library="DateTime">
+<doc>Returns current local or UTC time with an optional increment.</doc>
+<assign>
+<var>${HORA_ATUAL}</var>
+</assign>
+<msg timestamp="20201203 10:28:38.099" level="INFO">${HORA_ATUAL} = 2020-12-03 10:28:38.098</msg>
+<status status="PASS" starttime="20201203 10:28:38.097" endtime="20201203 10:28:38.099"></status>
+</kw>
+<kw name="Convert Date" library="DateTime">
+<doc>Converts between supported `date formats`.</doc>
+<arguments>
+<arg>${HORA_ATUAL}</arg>
+<arg>datetime</arg>
+</arguments>
+<assign>
+<var>${HORA_ATUAL}</var>
+</assign>
+<msg timestamp="20201203 10:28:38.104" level="INFO">${HORA_ATUAL} = 2020-12-03 10:28:38.098000</msg>
+<status status="PASS" starttime="20201203 10:28:38.100" endtime="20201203 10:28:38.104"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>Hora atual: ${HORA_ATUAL.hour}\nMinuto atual: ${HORA_ATUAL.minute}\nSegundo atual: ${HORA_ATUAL.second}</arg>
+</arguments>
+<msg timestamp="20201203 10:28:38.109" level="INFO">Hora atual: 10
+Minuto atual: 28
+Segundo atual: 38</msg>
+<status status="PASS" starttime="20201203 10:28:38.105" endtime="20201203 10:28:38.110"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>"${HORA_ATUAL.second}"!="15"</arg>
+<arg>Fail</arg>
+<arg>msg=Ainda não estamos no segundo 15!!</arg>
+</arguments>
+<kw name="Fail" library="BuiltIn">
+<doc>Fails the test with the given message and optionally alters its tags.</doc>
+<arguments>
+<arg>msg=Ainda não estamos no segundo 15!!</arg>
+</arguments>
+<msg timestamp="20201203 10:28:38.116" level="FAIL">Ainda não estamos no segundo 15!!</msg>
+<status status="FAIL" starttime="20201203 10:28:38.112" endtime="20201203 10:28:38.117"></status>
+</kw>
+<status status="FAIL" starttime="20201203 10:28:38.110" endtime="20201203 10:28:38.117"></status>
+</kw>
+<status status="FAIL" starttime="20201203 10:28:38.095" endtime="20201203 10:28:38.117"></status>
+</kw>
+<kw name="Essa keyword só passa se estivermos no segundo 15!">
+<kw name="Get Current Date" library="DateTime">
+<doc>Returns current local or UTC time with an optional increment.</doc>
+<assign>
+<var>${HORA_ATUAL}</var>
+</assign>
+<msg timestamp="20201203 10:28:39.129" level="INFO">${HORA_ATUAL} = 2020-12-03 10:28:39.128</msg>
+<status status="PASS" starttime="20201203 10:28:39.122" endtime="20201203 10:28:39.129"></status>
+</kw>
+<kw name="Convert Date" library="DateTime">
+<doc>Converts between supported `date formats`.</doc>
+<arguments>
+<arg>${HORA_ATUAL}</arg>
+<arg>datetime</arg>
+</arguments>
+<assign>
+<var>${HORA_ATUAL}</var>
+</assign>
+<msg timestamp="20201203 10:28:39.133" level="INFO">${HORA_ATUAL} = 2020-12-03 10:28:39.128000</msg>
+<status status="PASS" starttime="20201203 10:28:39.130" endtime="20201203 10:28:39.134"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>Hora atual: ${HORA_ATUAL.hour}\nMinuto atual: ${HORA_ATUAL.minute}\nSegundo atual: ${HORA_ATUAL.second}</arg>
+</arguments>
+<msg timestamp="20201203 10:28:39.138" level="INFO">Hora atual: 10
+Minuto atual: 28
+Segundo atual: 39</msg>
+<status status="PASS" starttime="20201203 10:28:39.134" endtime="20201203 10:28:39.139"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>"${HORA_ATUAL.second}"!="15"</arg>
+<arg>Fail</arg>
+<arg>msg=Ainda não estamos no segundo 15!!</arg>
+</arguments>
+<kw name="Fail" library="BuiltIn">
+<doc>Fails the test with the given message and optionally alters its tags.</doc>
+<arguments>
+<arg>msg=Ainda não estamos no segundo 15!!</arg>
+</arguments>
+<msg timestamp="20201203 10:28:39.145" level="FAIL">Ainda não estamos no segundo 15!!</msg>
+<status status="FAIL" starttime="20201203 10:28:39.142" endtime="20201203 10:28:39.145"></status>
+</kw>
+<status status="FAIL" starttime="20201203 10:28:39.139" endtime="20201203 10:28:39.145"></status>
+</kw>
+<status status="FAIL" starttime="20201203 10:28:39.119" endtime="20201203 10:28:39.146"></status>
+</kw>
+<kw name="Essa keyword só passa se estivermos no segundo 15!">
+<kw name="Get Current Date" library="DateTime">
+<doc>Returns current local or UTC time with an optional increment.</doc>
+<assign>
+<var>${HORA_ATUAL}</var>
+</assign>
+<msg timestamp="20201203 10:28:40.151" level="INFO">${HORA_ATUAL} = 2020-12-03 10:28:40.151</msg>
+<status status="PASS" starttime="20201203 10:28:40.149" endtime="20201203 10:28:40.152"></status>
+</kw>
+<kw name="Convert Date" library="DateTime">
+<doc>Converts between supported `date formats`.</doc>
+<arguments>
+<arg>${HORA_ATUAL}</arg>
+<arg>datetime</arg>
+</arguments>
+<assign>
+<var>${HORA_ATUAL}</var>
+</assign>
+<msg timestamp="20201203 10:28:40.155" level="INFO">${HORA_ATUAL} = 2020-12-03 10:28:40.151000</msg>
+<status status="PASS" starttime="20201203 10:28:40.152" endtime="20201203 10:28:40.155"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>Hora atual: ${HORA_ATUAL.hour}\nMinuto atual: ${HORA_ATUAL.minute}\nSegundo atual: ${HORA_ATUAL.second}</arg>
+</arguments>
+<msg timestamp="20201203 10:28:40.160" level="INFO">Hora atual: 10
+Minuto atual: 28
+Segundo atual: 40</msg>
+<status status="PASS" starttime="20201203 10:28:40.156" endtime="20201203 10:28:40.161"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>"${HORA_ATUAL.second}"!="15"</arg>
+<arg>Fail</arg>
+<arg>msg=Ainda não estamos no segundo 15!!</arg>
+</arguments>
+<kw name="Fail" library="BuiltIn">
+<doc>Fails the test with the given message and optionally alters its tags.</doc>
+<arguments>
+<arg>msg=Ainda não estamos no segundo 15!!</arg>
+</arguments>
+<msg timestamp="20201203 10:28:40.165" level="FAIL">Ainda não estamos no segundo 15!!</msg>
+<status status="FAIL" starttime="20201203 10:28:40.163" endtime="20201203 10:28:40.166"></status>
+</kw>
+<status status="FAIL" starttime="20201203 10:28:40.161" endtime="20201203 10:28:40.166"></status>
+</kw>
+<status status="FAIL" starttime="20201203 10:28:40.147" endtime="20201203 10:28:40.167"></status>
+</kw>
+<kw name="Essa keyword só passa se estivermos no segundo 15!">
+<kw name="Get Current Date" library="DateTime">
+<doc>Returns current local or UTC time with an optional increment.</doc>
+<assign>
+<var>${HORA_ATUAL}</var>
+</assign>
+<msg timestamp="20201203 10:28:41.173" level="INFO">${HORA_ATUAL} = 2020-12-03 10:28:41.171</msg>
+<status status="PASS" starttime="20201203 10:28:41.170" endtime="20201203 10:28:41.174"></status>
+</kw>
+<kw name="Convert Date" library="DateTime">
+<doc>Converts between supported `date formats`.</doc>
+<arguments>
+<arg>${HORA_ATUAL}</arg>
+<arg>datetime</arg>
+</arguments>
+<assign>
+<var>${HORA_ATUAL}</var>
+</assign>
+<msg timestamp="20201203 10:28:41.178" level="INFO">${HORA_ATUAL} = 2020-12-03 10:28:41.171000</msg>
+<status status="PASS" starttime="20201203 10:28:41.174" endtime="20201203 10:28:41.178"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>Hora atual: ${HORA_ATUAL.hour}\nMinuto atual: ${HORA_ATUAL.minute}\nSegundo atual: ${HORA_ATUAL.second}</arg>
+</arguments>
+<msg timestamp="20201203 10:28:41.182" level="INFO">Hora atual: 10
+Minuto atual: 28
+Segundo atual: 41</msg>
+<status status="PASS" starttime="20201203 10:28:41.178" endtime="20201203 10:28:41.182"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>"${HORA_ATUAL.second}"!="15"</arg>
+<arg>Fail</arg>
+<arg>msg=Ainda não estamos no segundo 15!!</arg>
+</arguments>
+<kw name="Fail" library="BuiltIn">
+<doc>Fails the test with the given message and optionally alters its tags.</doc>
+<arguments>
+<arg>msg=Ainda não estamos no segundo 15!!</arg>
+</arguments>
+<msg timestamp="20201203 10:28:41.189" level="FAIL">Ainda não estamos no segundo 15!!</msg>
+<status status="FAIL" starttime="20201203 10:28:41.187" endtime="20201203 10:28:41.190"></status>
+</kw>
+<status status="FAIL" starttime="20201203 10:28:41.183" endtime="20201203 10:28:41.190"></status>
+</kw>
+<status status="FAIL" starttime="20201203 10:28:41.168" endtime="20201203 10:28:41.191"></status>
+</kw>
+<kw name="Essa keyword só passa se estivermos no segundo 15!">
+<kw name="Get Current Date" library="DateTime">
+<doc>Returns current local or UTC time with an optional increment.</doc>
+<assign>
+<var>${HORA_ATUAL}</var>
+</assign>
+<msg timestamp="20201203 10:28:42.197" level="INFO">${HORA_ATUAL} = 2020-12-03 10:28:42.196</msg>
+<status status="PASS" starttime="20201203 10:28:42.194" endtime="20201203 10:28:42.197"></status>
+</kw>
+<kw name="Convert Date" library="DateTime">
+<doc>Converts between supported `date formats`.</doc>
+<arguments>
+<arg>${HORA_ATUAL}</arg>
+<arg>datetime</arg>
+</arguments>
+<assign>
+<var>${HORA_ATUAL}</var>
+</assign>
+<msg timestamp="20201203 10:28:42.201" level="INFO">${HORA_ATUAL} = 2020-12-03 10:28:42.196000</msg>
+<status status="PASS" starttime="20201203 10:28:42.197" endtime="20201203 10:28:42.201"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>Hora atual: ${HORA_ATUAL.hour}\nMinuto atual: ${HORA_ATUAL.minute}\nSegundo atual: ${HORA_ATUAL.second}</arg>
+</arguments>
+<msg timestamp="20201203 10:28:42.205" level="INFO">Hora atual: 10
+Minuto atual: 28
+Segundo atual: 42</msg>
+<status status="PASS" starttime="20201203 10:28:42.202" endtime="20201203 10:28:42.206"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>"${HORA_ATUAL.second}"!="15"</arg>
+<arg>Fail</arg>
+<arg>msg=Ainda não estamos no segundo 15!!</arg>
+</arguments>
+<kw name="Fail" library="BuiltIn">
+<doc>Fails the test with the given message and optionally alters its tags.</doc>
+<arguments>
+<arg>msg=Ainda não estamos no segundo 15!!</arg>
+</arguments>
+<msg timestamp="20201203 10:28:42.212" level="FAIL">Ainda não estamos no segundo 15!!</msg>
+<status status="FAIL" starttime="20201203 10:28:42.209" endtime="20201203 10:28:42.213"></status>
+</kw>
+<status status="FAIL" starttime="20201203 10:28:42.206" endtime="20201203 10:28:42.213"></status>
+</kw>
+<status status="FAIL" starttime="20201203 10:28:42.192" endtime="20201203 10:28:42.213"></status>
+</kw>
+<kw name="Essa keyword só passa se estivermos no segundo 15!">
+<kw name="Get Current Date" library="DateTime">
+<doc>Returns current local or UTC time with an optional increment.</doc>
+<assign>
+<var>${HORA_ATUAL}</var>
+</assign>
+<msg timestamp="20201203 10:28:43.219" level="INFO">${HORA_ATUAL} = 2020-12-03 10:28:43.218</msg>
+<status status="PASS" starttime="20201203 10:28:43.216" endtime="20201203 10:28:43.219"></status>
+</kw>
+<kw name="Convert Date" library="DateTime">
+<doc>Converts between supported `date formats`.</doc>
+<arguments>
+<arg>${HORA_ATUAL}</arg>
+<arg>datetime</arg>
+</arguments>
+<assign>
+<var>${HORA_ATUAL}</var>
+</assign>
+<msg timestamp="20201203 10:28:43.222" level="INFO">${HORA_ATUAL} = 2020-12-03 10:28:43.218000</msg>
+<status status="PASS" starttime="20201203 10:28:43.219" endtime="20201203 10:28:43.223"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>Hora atual: ${HORA_ATUAL.hour}\nMinuto atual: ${HORA_ATUAL.minute}\nSegundo atual: ${HORA_ATUAL.second}</arg>
+</arguments>
+<msg timestamp="20201203 10:28:43.230" level="INFO">Hora atual: 10
+Minuto atual: 28
+Segundo atual: 43</msg>
+<status status="PASS" starttime="20201203 10:28:43.225" endtime="20201203 10:28:43.230"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>"${HORA_ATUAL.second}"!="15"</arg>
+<arg>Fail</arg>
+<arg>msg=Ainda não estamos no segundo 15!!</arg>
+</arguments>
+<kw name="Fail" library="BuiltIn">
+<doc>Fails the test with the given message and optionally alters its tags.</doc>
+<arguments>
+<arg>msg=Ainda não estamos no segundo 15!!</arg>
+</arguments>
+<msg timestamp="20201203 10:28:43.235" level="FAIL">Ainda não estamos no segundo 15!!</msg>
+<status status="FAIL" starttime="20201203 10:28:43.232" endtime="20201203 10:28:43.235"></status>
+</kw>
+<status status="FAIL" starttime="20201203 10:28:43.231" endtime="20201203 10:28:43.236"></status>
+</kw>
+<status status="FAIL" starttime="20201203 10:28:43.214" endtime="20201203 10:28:43.236"></status>
+</kw>
+<kw name="Essa keyword só passa se estivermos no segundo 15!">
+<kw name="Get Current Date" library="DateTime">
+<doc>Returns current local or UTC time with an optional increment.</doc>
+<assign>
+<var>${HORA_ATUAL}</var>
+</assign>
+<msg timestamp="20201203 10:28:44.244" level="INFO">${HORA_ATUAL} = 2020-12-03 10:28:44.244</msg>
+<status status="PASS" starttime="20201203 10:28:44.242" endtime="20201203 10:28:44.245"></status>
+</kw>
+<kw name="Convert Date" library="DateTime">
+<doc>Converts between supported `date formats`.</doc>
+<arguments>
+<arg>${HORA_ATUAL}</arg>
+<arg>datetime</arg>
+</arguments>
+<assign>
+<var>${HORA_ATUAL}</var>
+</assign>
+<msg timestamp="20201203 10:28:44.248" level="INFO">${HORA_ATUAL} = 2020-12-03 10:28:44.244000</msg>
+<status status="PASS" starttime="20201203 10:28:44.245" endtime="20201203 10:28:44.248"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>Hora atual: ${HORA_ATUAL.hour}\nMinuto atual: ${HORA_ATUAL.minute}\nSegundo atual: ${HORA_ATUAL.second}</arg>
+</arguments>
+<msg timestamp="20201203 10:28:44.254" level="INFO">Hora atual: 10
+Minuto atual: 28
+Segundo atual: 44</msg>
+<status status="PASS" starttime="20201203 10:28:44.249" endtime="20201203 10:28:44.254"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>"${HORA_ATUAL.second}"!="15"</arg>
+<arg>Fail</arg>
+<arg>msg=Ainda não estamos no segundo 15!!</arg>
+</arguments>
+<kw name="Fail" library="BuiltIn">
+<doc>Fails the test with the given message and optionally alters its tags.</doc>
+<arguments>
+<arg>msg=Ainda não estamos no segundo 15!!</arg>
+</arguments>
+<msg timestamp="20201203 10:28:44.259" level="FAIL">Ainda não estamos no segundo 15!!</msg>
+<status status="FAIL" starttime="20201203 10:28:44.256" endtime="20201203 10:28:44.259"></status>
+</kw>
+<status status="FAIL" starttime="20201203 10:28:44.255" endtime="20201203 10:28:44.259"></status>
+</kw>
+<status status="FAIL" starttime="20201203 10:28:44.239" endtime="20201203 10:28:44.260"></status>
+</kw>
+<kw name="Essa keyword só passa se estivermos no segundo 15!">
+<kw name="Get Current Date" library="DateTime">
+<doc>Returns current local or UTC time with an optional increment.</doc>
+<assign>
+<var>${HORA_ATUAL}</var>
+</assign>
+<msg timestamp="20201203 10:28:45.264" level="INFO">${HORA_ATUAL} = 2020-12-03 10:28:45.264</msg>
+<status status="PASS" starttime="20201203 10:28:45.262" endtime="20201203 10:28:45.265"></status>
+</kw>
+<kw name="Convert Date" library="DateTime">
+<doc>Converts between supported `date formats`.</doc>
+<arguments>
+<arg>${HORA_ATUAL}</arg>
+<arg>datetime</arg>
+</arguments>
+<assign>
+<var>${HORA_ATUAL}</var>
+</assign>
+<msg timestamp="20201203 10:28:45.271" level="INFO">${HORA_ATUAL} = 2020-12-03 10:28:45.264000</msg>
+<status status="PASS" starttime="20201203 10:28:45.266" endtime="20201203 10:28:45.271"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>Hora atual: ${HORA_ATUAL.hour}\nMinuto atual: ${HORA_ATUAL.minute}\nSegundo atual: ${HORA_ATUAL.second}</arg>
+</arguments>
+<msg timestamp="20201203 10:28:45.278" level="INFO">Hora atual: 10
+Minuto atual: 28
+Segundo atual: 45</msg>
+<status status="PASS" starttime="20201203 10:28:45.272" endtime="20201203 10:28:45.279"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>"${HORA_ATUAL.second}"!="15"</arg>
+<arg>Fail</arg>
+<arg>msg=Ainda não estamos no segundo 15!!</arg>
+</arguments>
+<kw name="Fail" library="BuiltIn">
+<doc>Fails the test with the given message and optionally alters its tags.</doc>
+<arguments>
+<arg>msg=Ainda não estamos no segundo 15!!</arg>
+</arguments>
+<msg timestamp="20201203 10:28:45.285" level="FAIL">Ainda não estamos no segundo 15!!</msg>
+<status status="FAIL" starttime="20201203 10:28:45.282" endtime="20201203 10:28:45.285"></status>
+</kw>
+<status status="FAIL" starttime="20201203 10:28:45.280" endtime="20201203 10:28:45.285"></status>
+</kw>
+<status status="FAIL" starttime="20201203 10:28:45.260" endtime="20201203 10:28:45.285"></status>
+</kw>
+<kw name="Essa keyword só passa se estivermos no segundo 15!">
+<kw name="Get Current Date" library="DateTime">
+<doc>Returns current local or UTC time with an optional increment.</doc>
+<assign>
+<var>${HORA_ATUAL}</var>
+</assign>
+<msg timestamp="20201203 10:28:46.293" level="INFO">${HORA_ATUAL} = 2020-12-03 10:28:46.291</msg>
+<status status="PASS" starttime="20201203 10:28:46.289" endtime="20201203 10:28:46.293"></status>
+</kw>
+<kw name="Convert Date" library="DateTime">
+<doc>Converts between supported `date formats`.</doc>
+<arguments>
+<arg>${HORA_ATUAL}</arg>
+<arg>datetime</arg>
+</arguments>
+<assign>
+<var>${HORA_ATUAL}</var>
+</assign>
+<msg timestamp="20201203 10:28:46.297" level="INFO">${HORA_ATUAL} = 2020-12-03 10:28:46.291000</msg>
+<status status="PASS" starttime="20201203 10:28:46.294" endtime="20201203 10:28:46.298"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>Hora atual: ${HORA_ATUAL.hour}\nMinuto atual: ${HORA_ATUAL.minute}\nSegundo atual: ${HORA_ATUAL.second}</arg>
+</arguments>
+<msg timestamp="20201203 10:28:46.303" level="INFO">Hora atual: 10
+Minuto atual: 28
+Segundo atual: 46</msg>
+<status status="PASS" starttime="20201203 10:28:46.298" endtime="20201203 10:28:46.303"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>"${HORA_ATUAL.second}"!="15"</arg>
+<arg>Fail</arg>
+<arg>msg=Ainda não estamos no segundo 15!!</arg>
+</arguments>
+<kw name="Fail" library="BuiltIn">
+<doc>Fails the test with the given message and optionally alters its tags.</doc>
+<arguments>
+<arg>msg=Ainda não estamos no segundo 15!!</arg>
+</arguments>
+<msg timestamp="20201203 10:28:46.308" level="FAIL">Ainda não estamos no segundo 15!!</msg>
+<status status="FAIL" starttime="20201203 10:28:46.306" endtime="20201203 10:28:46.308"></status>
+</kw>
+<status status="FAIL" starttime="20201203 10:28:46.304" endtime="20201203 10:28:46.308"></status>
+</kw>
+<status status="FAIL" starttime="20201203 10:28:46.287" endtime="20201203 10:28:46.309"></status>
+</kw>
+<kw name="Essa keyword só passa se estivermos no segundo 15!">
+<kw name="Get Current Date" library="DateTime">
+<doc>Returns current local or UTC time with an optional increment.</doc>
+<assign>
+<var>${HORA_ATUAL}</var>
+</assign>
+<msg timestamp="20201203 10:28:47.315" level="INFO">${HORA_ATUAL} = 2020-12-03 10:28:47.314</msg>
+<status status="PASS" starttime="20201203 10:28:47.312" endtime="20201203 10:28:47.315"></status>
+</kw>
+<kw name="Convert Date" library="DateTime">
+<doc>Converts between supported `date formats`.</doc>
+<arguments>
+<arg>${HORA_ATUAL}</arg>
+<arg>datetime</arg>
+</arguments>
+<assign>
+<var>${HORA_ATUAL}</var>
+</assign>
+<msg timestamp="20201203 10:28:47.319" level="INFO">${HORA_ATUAL} = 2020-12-03 10:28:47.314000</msg>
+<status status="PASS" starttime="20201203 10:28:47.316" endtime="20201203 10:28:47.319"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>Hora atual: ${HORA_ATUAL.hour}\nMinuto atual: ${HORA_ATUAL.minute}\nSegundo atual: ${HORA_ATUAL.second}</arg>
+</arguments>
+<msg timestamp="20201203 10:28:47.324" level="INFO">Hora atual: 10
+Minuto atual: 28
+Segundo atual: 47</msg>
+<status status="PASS" starttime="20201203 10:28:47.320" endtime="20201203 10:28:47.325"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>"${HORA_ATUAL.second}"!="15"</arg>
+<arg>Fail</arg>
+<arg>msg=Ainda não estamos no segundo 15!!</arg>
+</arguments>
+<kw name="Fail" library="BuiltIn">
+<doc>Fails the test with the given message and optionally alters its tags.</doc>
+<arguments>
+<arg>msg=Ainda não estamos no segundo 15!!</arg>
+</arguments>
+<msg timestamp="20201203 10:28:47.331" level="FAIL">Ainda não estamos no segundo 15!!</msg>
+<status status="FAIL" starttime="20201203 10:28:47.328" endtime="20201203 10:28:47.331"></status>
+</kw>
+<status status="FAIL" starttime="20201203 10:28:47.326" endtime="20201203 10:28:47.331"></status>
+</kw>
+<status status="FAIL" starttime="20201203 10:28:47.310" endtime="20201203 10:28:47.333"></status>
+</kw>
+<kw name="Essa keyword só passa se estivermos no segundo 15!">
+<kw name="Get Current Date" library="DateTime">
+<doc>Returns current local or UTC time with an optional increment.</doc>
+<assign>
+<var>${HORA_ATUAL}</var>
+</assign>
+<msg timestamp="20201203 10:28:48.339" level="INFO">${HORA_ATUAL} = 2020-12-03 10:28:48.338</msg>
+<status status="PASS" starttime="20201203 10:28:48.336" endtime="20201203 10:28:48.339"></status>
+</kw>
+<kw name="Convert Date" library="DateTime">
+<doc>Converts between supported `date formats`.</doc>
+<arguments>
+<arg>${HORA_ATUAL}</arg>
+<arg>datetime</arg>
+</arguments>
+<assign>
+<var>${HORA_ATUAL}</var>
+</assign>
+<msg timestamp="20201203 10:28:48.344" level="INFO">${HORA_ATUAL} = 2020-12-03 10:28:48.338000</msg>
+<status status="PASS" starttime="20201203 10:28:48.339" endtime="20201203 10:28:48.344"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>Hora atual: ${HORA_ATUAL.hour}\nMinuto atual: ${HORA_ATUAL.minute}\nSegundo atual: ${HORA_ATUAL.second}</arg>
+</arguments>
+<msg timestamp="20201203 10:28:48.349" level="INFO">Hora atual: 10
+Minuto atual: 28
+Segundo atual: 48</msg>
+<status status="PASS" starttime="20201203 10:28:48.344" endtime="20201203 10:28:48.349"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>"${HORA_ATUAL.second}"!="15"</arg>
+<arg>Fail</arg>
+<arg>msg=Ainda não estamos no segundo 15!!</arg>
+</arguments>
+<kw name="Fail" library="BuiltIn">
+<doc>Fails the test with the given message and optionally alters its tags.</doc>
+<arguments>
+<arg>msg=Ainda não estamos no segundo 15!!</arg>
+</arguments>
+<msg timestamp="20201203 10:28:48.355" level="FAIL">Ainda não estamos no segundo 15!!</msg>
+<status status="FAIL" starttime="20201203 10:28:48.352" endtime="20201203 10:28:48.355"></status>
+</kw>
+<status status="FAIL" starttime="20201203 10:28:48.350" endtime="20201203 10:28:48.355"></status>
+</kw>
+<status status="FAIL" starttime="20201203 10:28:48.334" endtime="20201203 10:28:48.356"></status>
+</kw>
+<kw name="Essa keyword só passa se estivermos no segundo 15!">
+<kw name="Get Current Date" library="DateTime">
+<doc>Returns current local or UTC time with an optional increment.</doc>
+<assign>
+<var>${HORA_ATUAL}</var>
+</assign>
+<msg timestamp="20201203 10:28:49.358" level="INFO">${HORA_ATUAL} = 2020-12-03 10:28:49.358</msg>
+<status status="PASS" starttime="20201203 10:28:49.357" endtime="20201203 10:28:49.358"></status>
+</kw>
+<kw name="Convert Date" library="DateTime">
+<doc>Converts between supported `date formats`.</doc>
+<arguments>
+<arg>${HORA_ATUAL}</arg>
+<arg>datetime</arg>
+</arguments>
+<assign>
+<var>${HORA_ATUAL}</var>
+</assign>
+<msg timestamp="20201203 10:28:49.359" level="INFO">${HORA_ATUAL} = 2020-12-03 10:28:49.358000</msg>
+<status status="PASS" starttime="20201203 10:28:49.358" endtime="20201203 10:28:49.359"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>Hora atual: ${HORA_ATUAL.hour}\nMinuto atual: ${HORA_ATUAL.minute}\nSegundo atual: ${HORA_ATUAL.second}</arg>
+</arguments>
+<msg timestamp="20201203 10:28:49.360" level="INFO">Hora atual: 10
+Minuto atual: 28
+Segundo atual: 49</msg>
+<status status="PASS" starttime="20201203 10:28:49.359" endtime="20201203 10:28:49.360"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>"${HORA_ATUAL.second}"!="15"</arg>
+<arg>Fail</arg>
+<arg>msg=Ainda não estamos no segundo 15!!</arg>
+</arguments>
+<kw name="Fail" library="BuiltIn">
+<doc>Fails the test with the given message and optionally alters its tags.</doc>
+<arguments>
+<arg>msg=Ainda não estamos no segundo 15!!</arg>
+</arguments>
+<msg timestamp="20201203 10:28:49.362" level="FAIL">Ainda não estamos no segundo 15!!</msg>
+<status status="FAIL" starttime="20201203 10:28:49.361" endtime="20201203 10:28:49.362"></status>
+</kw>
+<status status="FAIL" starttime="20201203 10:28:49.361" endtime="20201203 10:28:49.362"></status>
+</kw>
+<status status="FAIL" starttime="20201203 10:28:49.357" endtime="20201203 10:28:49.362"></status>
+</kw>
+<kw name="Essa keyword só passa se estivermos no segundo 15!">
+<kw name="Get Current Date" library="DateTime">
+<doc>Returns current local or UTC time with an optional increment.</doc>
+<assign>
+<var>${HORA_ATUAL}</var>
+</assign>
+<msg timestamp="20201203 10:28:50.372" level="INFO">${HORA_ATUAL} = 2020-12-03 10:28:50.371</msg>
+<status status="PASS" starttime="20201203 10:28:50.367" endtime="20201203 10:28:50.372"></status>
+</kw>
+<kw name="Convert Date" library="DateTime">
+<doc>Converts between supported `date formats`.</doc>
+<arguments>
+<arg>${HORA_ATUAL}</arg>
+<arg>datetime</arg>
+</arguments>
+<assign>
+<var>${HORA_ATUAL}</var>
+</assign>
+<msg timestamp="20201203 10:28:50.376" level="INFO">${HORA_ATUAL} = 2020-12-03 10:28:50.371000</msg>
+<status status="PASS" starttime="20201203 10:28:50.372" endtime="20201203 10:28:50.376"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>Hora atual: ${HORA_ATUAL.hour}\nMinuto atual: ${HORA_ATUAL.minute}\nSegundo atual: ${HORA_ATUAL.second}</arg>
+</arguments>
+<msg timestamp="20201203 10:28:50.380" level="INFO">Hora atual: 10
+Minuto atual: 28
+Segundo atual: 50</msg>
+<status status="PASS" starttime="20201203 10:28:50.376" endtime="20201203 10:28:50.380"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>"${HORA_ATUAL.second}"!="15"</arg>
+<arg>Fail</arg>
+<arg>msg=Ainda não estamos no segundo 15!!</arg>
+</arguments>
+<kw name="Fail" library="BuiltIn">
+<doc>Fails the test with the given message and optionally alters its tags.</doc>
+<arguments>
+<arg>msg=Ainda não estamos no segundo 15!!</arg>
+</arguments>
+<msg timestamp="20201203 10:28:50.388" level="FAIL">Ainda não estamos no segundo 15!!</msg>
+<status status="FAIL" starttime="20201203 10:28:50.385" endtime="20201203 10:28:50.389"></status>
+</kw>
+<status status="FAIL" starttime="20201203 10:28:50.383" endtime="20201203 10:28:50.390"></status>
+</kw>
+<status status="FAIL" starttime="20201203 10:28:50.364" endtime="20201203 10:28:50.392"></status>
+</kw>
+<kw name="Essa keyword só passa se estivermos no segundo 15!">
+<kw name="Get Current Date" library="DateTime">
+<doc>Returns current local or UTC time with an optional increment.</doc>
+<assign>
+<var>${HORA_ATUAL}</var>
+</assign>
+<msg timestamp="20201203 10:28:51.400" level="INFO">${HORA_ATUAL} = 2020-12-03 10:28:51.399</msg>
+<status status="PASS" starttime="20201203 10:28:51.397" endtime="20201203 10:28:51.400"></status>
+</kw>
+<kw name="Convert Date" library="DateTime">
+<doc>Converts between supported `date formats`.</doc>
+<arguments>
+<arg>${HORA_ATUAL}</arg>
+<arg>datetime</arg>
+</arguments>
+<assign>
+<var>${HORA_ATUAL}</var>
+</assign>
+<msg timestamp="20201203 10:28:51.404" level="INFO">${HORA_ATUAL} = 2020-12-03 10:28:51.399000</msg>
+<status status="PASS" starttime="20201203 10:28:51.400" endtime="20201203 10:28:51.404"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>Hora atual: ${HORA_ATUAL.hour}\nMinuto atual: ${HORA_ATUAL.minute}\nSegundo atual: ${HORA_ATUAL.second}</arg>
+</arguments>
+<msg timestamp="20201203 10:28:51.410" level="INFO">Hora atual: 10
+Minuto atual: 28
+Segundo atual: 51</msg>
+<status status="PASS" starttime="20201203 10:28:51.405" endtime="20201203 10:28:51.410"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>"${HORA_ATUAL.second}"!="15"</arg>
+<arg>Fail</arg>
+<arg>msg=Ainda não estamos no segundo 15!!</arg>
+</arguments>
+<kw name="Fail" library="BuiltIn">
+<doc>Fails the test with the given message and optionally alters its tags.</doc>
+<arguments>
+<arg>msg=Ainda não estamos no segundo 15!!</arg>
+</arguments>
+<msg timestamp="20201203 10:28:51.415" level="FAIL">Ainda não estamos no segundo 15!!</msg>
+<status status="FAIL" starttime="20201203 10:28:51.413" endtime="20201203 10:28:51.416"></status>
+</kw>
+<status status="FAIL" starttime="20201203 10:28:51.411" endtime="20201203 10:28:51.416"></status>
+</kw>
+<status status="FAIL" starttime="20201203 10:28:51.394" endtime="20201203 10:28:51.417"></status>
+</kw>
+<kw name="Essa keyword só passa se estivermos no segundo 15!">
+<kw name="Get Current Date" library="DateTime">
+<doc>Returns current local or UTC time with an optional increment.</doc>
+<assign>
+<var>${HORA_ATUAL}</var>
+</assign>
+<msg timestamp="20201203 10:28:52.423" level="INFO">${HORA_ATUAL} = 2020-12-03 10:28:52.422</msg>
+<status status="PASS" starttime="20201203 10:28:52.421" endtime="20201203 10:28:52.423"></status>
+</kw>
+<kw name="Convert Date" library="DateTime">
+<doc>Converts between supported `date formats`.</doc>
+<arguments>
+<arg>${HORA_ATUAL}</arg>
+<arg>datetime</arg>
+</arguments>
+<assign>
+<var>${HORA_ATUAL}</var>
+</assign>
+<msg timestamp="20201203 10:28:52.427" level="INFO">${HORA_ATUAL} = 2020-12-03 10:28:52.422000</msg>
+<status status="PASS" starttime="20201203 10:28:52.423" endtime="20201203 10:28:52.427"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>Hora atual: ${HORA_ATUAL.hour}\nMinuto atual: ${HORA_ATUAL.minute}\nSegundo atual: ${HORA_ATUAL.second}</arg>
+</arguments>
+<msg timestamp="20201203 10:28:52.430" level="INFO">Hora atual: 10
+Minuto atual: 28
+Segundo atual: 52</msg>
+<status status="PASS" starttime="20201203 10:28:52.428" endtime="20201203 10:28:52.430"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>"${HORA_ATUAL.second}"!="15"</arg>
+<arg>Fail</arg>
+<arg>msg=Ainda não estamos no segundo 15!!</arg>
+</arguments>
+<kw name="Fail" library="BuiltIn">
+<doc>Fails the test with the given message and optionally alters its tags.</doc>
+<arguments>
+<arg>msg=Ainda não estamos no segundo 15!!</arg>
+</arguments>
+<msg timestamp="20201203 10:28:52.434" level="FAIL">Ainda não estamos no segundo 15!!</msg>
+<status status="FAIL" starttime="20201203 10:28:52.433" endtime="20201203 10:28:52.434"></status>
+</kw>
+<status status="FAIL" starttime="20201203 10:28:52.431" endtime="20201203 10:28:52.434"></status>
+</kw>
+<status status="FAIL" starttime="20201203 10:28:52.419" endtime="20201203 10:28:52.435"></status>
+</kw>
+<kw name="Essa keyword só passa se estivermos no segundo 15!">
+<kw name="Get Current Date" library="DateTime">
+<doc>Returns current local or UTC time with an optional increment.</doc>
+<assign>
+<var>${HORA_ATUAL}</var>
+</assign>
+<msg timestamp="20201203 10:28:53.437" level="INFO">${HORA_ATUAL} = 2020-12-03 10:28:53.437</msg>
+<status status="PASS" starttime="20201203 10:28:53.436" endtime="20201203 10:28:53.437"></status>
+</kw>
+<kw name="Convert Date" library="DateTime">
+<doc>Converts between supported `date formats`.</doc>
+<arguments>
+<arg>${HORA_ATUAL}</arg>
+<arg>datetime</arg>
+</arguments>
+<assign>
+<var>${HORA_ATUAL}</var>
+</assign>
+<msg timestamp="20201203 10:28:53.438" level="INFO">${HORA_ATUAL} = 2020-12-03 10:28:53.437000</msg>
+<status status="PASS" starttime="20201203 10:28:53.437" endtime="20201203 10:28:53.438"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>Hora atual: ${HORA_ATUAL.hour}\nMinuto atual: ${HORA_ATUAL.minute}\nSegundo atual: ${HORA_ATUAL.second}</arg>
+</arguments>
+<msg timestamp="20201203 10:28:53.439" level="INFO">Hora atual: 10
+Minuto atual: 28
+Segundo atual: 53</msg>
+<status status="PASS" starttime="20201203 10:28:53.438" endtime="20201203 10:28:53.439"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>"${HORA_ATUAL.second}"!="15"</arg>
+<arg>Fail</arg>
+<arg>msg=Ainda não estamos no segundo 15!!</arg>
+</arguments>
+<kw name="Fail" library="BuiltIn">
+<doc>Fails the test with the given message and optionally alters its tags.</doc>
+<arguments>
+<arg>msg=Ainda não estamos no segundo 15!!</arg>
+</arguments>
+<msg timestamp="20201203 10:28:53.441" level="FAIL">Ainda não estamos no segundo 15!!</msg>
+<status status="FAIL" starttime="20201203 10:28:53.440" endtime="20201203 10:28:53.441"></status>
+</kw>
+<status status="FAIL" starttime="20201203 10:28:53.440" endtime="20201203 10:28:53.441"></status>
+</kw>
+<status status="FAIL" starttime="20201203 10:28:53.436" endtime="20201203 10:28:53.441"></status>
+</kw>
+<kw name="Essa keyword só passa se estivermos no segundo 15!">
+<kw name="Get Current Date" library="DateTime">
+<doc>Returns current local or UTC time with an optional increment.</doc>
+<assign>
+<var>${HORA_ATUAL}</var>
+</assign>
+<msg timestamp="20201203 10:28:54.446" level="INFO">${HORA_ATUAL} = 2020-12-03 10:28:54.444</msg>
+<status status="PASS" starttime="20201203 10:28:54.442" endtime="20201203 10:28:54.446"></status>
+</kw>
+<kw name="Convert Date" library="DateTime">
+<doc>Converts between supported `date formats`.</doc>
+<arguments>
+<arg>${HORA_ATUAL}</arg>
+<arg>datetime</arg>
+</arguments>
+<assign>
+<var>${HORA_ATUAL}</var>
+</assign>
+<msg timestamp="20201203 10:28:54.448" level="INFO">${HORA_ATUAL} = 2020-12-03 10:28:54.444000</msg>
+<status status="PASS" starttime="20201203 10:28:54.446" endtime="20201203 10:28:54.448"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>Hora atual: ${HORA_ATUAL.hour}\nMinuto atual: ${HORA_ATUAL.minute}\nSegundo atual: ${HORA_ATUAL.second}</arg>
+</arguments>
+<msg timestamp="20201203 10:28:54.451" level="INFO">Hora atual: 10
+Minuto atual: 28
+Segundo atual: 54</msg>
+<status status="PASS" starttime="20201203 10:28:54.449" endtime="20201203 10:28:54.452"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>"${HORA_ATUAL.second}"!="15"</arg>
+<arg>Fail</arg>
+<arg>msg=Ainda não estamos no segundo 15!!</arg>
+</arguments>
+<kw name="Fail" library="BuiltIn">
+<doc>Fails the test with the given message and optionally alters its tags.</doc>
+<arguments>
+<arg>msg=Ainda não estamos no segundo 15!!</arg>
+</arguments>
+<msg timestamp="20201203 10:28:54.458" level="FAIL">Ainda não estamos no segundo 15!!</msg>
+<status status="FAIL" starttime="20201203 10:28:54.454" endtime="20201203 10:28:54.458"></status>
+</kw>
+<status status="FAIL" starttime="20201203 10:28:54.452" endtime="20201203 10:28:54.459"></status>
+</kw>
+<status status="FAIL" starttime="20201203 10:28:54.441" endtime="20201203 10:28:54.459"></status>
+</kw>
+<kw name="Essa keyword só passa se estivermos no segundo 15!">
+<kw name="Get Current Date" library="DateTime">
+<doc>Returns current local or UTC time with an optional increment.</doc>
+<assign>
+<var>${HORA_ATUAL}</var>
+</assign>
+<msg timestamp="20201203 10:28:55.461" level="INFO">${HORA_ATUAL} = 2020-12-03 10:28:55.461</msg>
+<status status="PASS" starttime="20201203 10:28:55.460" endtime="20201203 10:28:55.461"></status>
+</kw>
+<kw name="Convert Date" library="DateTime">
+<doc>Converts between supported `date formats`.</doc>
+<arguments>
+<arg>${HORA_ATUAL}</arg>
+<arg>datetime</arg>
+</arguments>
+<assign>
+<var>${HORA_ATUAL}</var>
+</assign>
+<msg timestamp="20201203 10:28:55.464" level="INFO">${HORA_ATUAL} = 2020-12-03 10:28:55.461000</msg>
+<status status="PASS" starttime="20201203 10:28:55.461" endtime="20201203 10:28:55.464"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>Hora atual: ${HORA_ATUAL.hour}\nMinuto atual: ${HORA_ATUAL.minute}\nSegundo atual: ${HORA_ATUAL.second}</arg>
+</arguments>
+<msg timestamp="20201203 10:28:55.467" level="INFO">Hora atual: 10
+Minuto atual: 28
+Segundo atual: 55</msg>
+<status status="PASS" starttime="20201203 10:28:55.464" endtime="20201203 10:28:55.467"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>"${HORA_ATUAL.second}"!="15"</arg>
+<arg>Fail</arg>
+<arg>msg=Ainda não estamos no segundo 15!!</arg>
+</arguments>
+<kw name="Fail" library="BuiltIn">
+<doc>Fails the test with the given message and optionally alters its tags.</doc>
+<arguments>
+<arg>msg=Ainda não estamos no segundo 15!!</arg>
+</arguments>
+<msg timestamp="20201203 10:28:55.470" level="FAIL">Ainda não estamos no segundo 15!!</msg>
+<status status="FAIL" starttime="20201203 10:28:55.468" endtime="20201203 10:28:55.470"></status>
+</kw>
+<status status="FAIL" starttime="20201203 10:28:55.467" endtime="20201203 10:28:55.470"></status>
+</kw>
+<status status="FAIL" starttime="20201203 10:28:55.459" endtime="20201203 10:28:55.471"></status>
+</kw>
+<kw name="Essa keyword só passa se estivermos no segundo 15!">
+<kw name="Get Current Date" library="DateTime">
+<doc>Returns current local or UTC time with an optional increment.</doc>
+<assign>
+<var>${HORA_ATUAL}</var>
+</assign>
+<msg timestamp="20201203 10:28:56.489" level="INFO">${HORA_ATUAL} = 2020-12-03 10:28:56.488</msg>
+<status status="PASS" starttime="20201203 10:28:56.476" endtime="20201203 10:28:56.490"></status>
+</kw>
+<kw name="Convert Date" library="DateTime">
+<doc>Converts between supported `date formats`.</doc>
+<arguments>
+<arg>${HORA_ATUAL}</arg>
+<arg>datetime</arg>
+</arguments>
+<assign>
+<var>${HORA_ATUAL}</var>
+</assign>
+<msg timestamp="20201203 10:28:56.493" level="INFO">${HORA_ATUAL} = 2020-12-03 10:28:56.488000</msg>
+<status status="PASS" starttime="20201203 10:28:56.491" endtime="20201203 10:28:56.493"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>Hora atual: ${HORA_ATUAL.hour}\nMinuto atual: ${HORA_ATUAL.minute}\nSegundo atual: ${HORA_ATUAL.second}</arg>
+</arguments>
+<msg timestamp="20201203 10:28:56.500" level="INFO">Hora atual: 10
+Minuto atual: 28
+Segundo atual: 56</msg>
+<status status="PASS" starttime="20201203 10:28:56.493" endtime="20201203 10:28:56.501"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>"${HORA_ATUAL.second}"!="15"</arg>
+<arg>Fail</arg>
+<arg>msg=Ainda não estamos no segundo 15!!</arg>
+</arguments>
+<kw name="Fail" library="BuiltIn">
+<doc>Fails the test with the given message and optionally alters its tags.</doc>
+<arguments>
+<arg>msg=Ainda não estamos no segundo 15!!</arg>
+</arguments>
+<msg timestamp="20201203 10:28:56.504" level="FAIL">Ainda não estamos no segundo 15!!</msg>
+<status status="FAIL" starttime="20201203 10:28:56.502" endtime="20201203 10:28:56.504"></status>
+</kw>
+<status status="FAIL" starttime="20201203 10:28:56.501" endtime="20201203 10:28:56.504"></status>
+</kw>
+<status status="FAIL" starttime="20201203 10:28:56.475" endtime="20201203 10:28:56.505"></status>
+</kw>
+<kw name="Essa keyword só passa se estivermos no segundo 15!">
+<kw name="Get Current Date" library="DateTime">
+<doc>Returns current local or UTC time with an optional increment.</doc>
+<assign>
+<var>${HORA_ATUAL}</var>
+</assign>
+<msg timestamp="20201203 10:28:57.510" level="INFO">${HORA_ATUAL} = 2020-12-03 10:28:57.510</msg>
+<status status="PASS" starttime="20201203 10:28:57.508" endtime="20201203 10:28:57.511"></status>
+</kw>
+<kw name="Convert Date" library="DateTime">
+<doc>Converts between supported `date formats`.</doc>
+<arguments>
+<arg>${HORA_ATUAL}</arg>
+<arg>datetime</arg>
+</arguments>
+<assign>
+<var>${HORA_ATUAL}</var>
+</assign>
+<msg timestamp="20201203 10:28:57.513" level="INFO">${HORA_ATUAL} = 2020-12-03 10:28:57.510000</msg>
+<status status="PASS" starttime="20201203 10:28:57.511" endtime="20201203 10:28:57.513"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>Hora atual: ${HORA_ATUAL.hour}\nMinuto atual: ${HORA_ATUAL.minute}\nSegundo atual: ${HORA_ATUAL.second}</arg>
+</arguments>
+<msg timestamp="20201203 10:28:57.515" level="INFO">Hora atual: 10
+Minuto atual: 28
+Segundo atual: 57</msg>
+<status status="PASS" starttime="20201203 10:28:57.513" endtime="20201203 10:28:57.515"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>"${HORA_ATUAL.second}"!="15"</arg>
+<arg>Fail</arg>
+<arg>msg=Ainda não estamos no segundo 15!!</arg>
+</arguments>
+<kw name="Fail" library="BuiltIn">
+<doc>Fails the test with the given message and optionally alters its tags.</doc>
+<arguments>
+<arg>msg=Ainda não estamos no segundo 15!!</arg>
+</arguments>
+<msg timestamp="20201203 10:28:57.519" level="FAIL">Ainda não estamos no segundo 15!!</msg>
+<status status="FAIL" starttime="20201203 10:28:57.517" endtime="20201203 10:28:57.519"></status>
+</kw>
+<status status="FAIL" starttime="20201203 10:28:57.515" endtime="20201203 10:28:57.519"></status>
+</kw>
+<status status="FAIL" starttime="20201203 10:28:57.507" endtime="20201203 10:28:57.520"></status>
+</kw>
+<kw name="Essa keyword só passa se estivermos no segundo 15!">
+<kw name="Get Current Date" library="DateTime">
+<doc>Returns current local or UTC time with an optional increment.</doc>
+<assign>
+<var>${HORA_ATUAL}</var>
+</assign>
+<msg timestamp="20201203 10:28:58.523" level="INFO">${HORA_ATUAL} = 2020-12-03 10:28:58.523</msg>
+<status status="PASS" starttime="20201203 10:28:58.522" endtime="20201203 10:28:58.523"></status>
+</kw>
+<kw name="Convert Date" library="DateTime">
+<doc>Converts between supported `date formats`.</doc>
+<arguments>
+<arg>${HORA_ATUAL}</arg>
+<arg>datetime</arg>
+</arguments>
+<assign>
+<var>${HORA_ATUAL}</var>
+</assign>
+<msg timestamp="20201203 10:28:58.525" level="INFO">${HORA_ATUAL} = 2020-12-03 10:28:58.523000</msg>
+<status status="PASS" starttime="20201203 10:28:58.523" endtime="20201203 10:28:58.525"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>Hora atual: ${HORA_ATUAL.hour}\nMinuto atual: ${HORA_ATUAL.minute}\nSegundo atual: ${HORA_ATUAL.second}</arg>
+</arguments>
+<msg timestamp="20201203 10:28:58.528" level="INFO">Hora atual: 10
+Minuto atual: 28
+Segundo atual: 58</msg>
+<status status="PASS" starttime="20201203 10:28:58.526" endtime="20201203 10:28:58.529"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>"${HORA_ATUAL.second}"!="15"</arg>
+<arg>Fail</arg>
+<arg>msg=Ainda não estamos no segundo 15!!</arg>
+</arguments>
+<kw name="Fail" library="BuiltIn">
+<doc>Fails the test with the given message and optionally alters its tags.</doc>
+<arguments>
+<arg>msg=Ainda não estamos no segundo 15!!</arg>
+</arguments>
+<msg timestamp="20201203 10:28:58.532" level="FAIL">Ainda não estamos no segundo 15!!</msg>
+<status status="FAIL" starttime="20201203 10:28:58.530" endtime="20201203 10:28:58.532"></status>
+</kw>
+<status status="FAIL" starttime="20201203 10:28:58.529" endtime="20201203 10:28:58.532"></status>
+</kw>
+<status status="FAIL" starttime="20201203 10:28:58.521" endtime="20201203 10:28:58.533"></status>
+</kw>
+<kw name="Essa keyword só passa se estivermos no segundo 15!">
+<kw name="Get Current Date" library="DateTime">
+<doc>Returns current local or UTC time with an optional increment.</doc>
+<assign>
+<var>${HORA_ATUAL}</var>
+</assign>
+<msg timestamp="20201203 10:28:59.539" level="INFO">${HORA_ATUAL} = 2020-12-03 10:28:59.538</msg>
+<status status="PASS" starttime="20201203 10:28:59.536" endtime="20201203 10:28:59.539"></status>
+</kw>
+<kw name="Convert Date" library="DateTime">
+<doc>Converts between supported `date formats`.</doc>
+<arguments>
+<arg>${HORA_ATUAL}</arg>
+<arg>datetime</arg>
+</arguments>
+<assign>
+<var>${HORA_ATUAL}</var>
+</assign>
+<msg timestamp="20201203 10:28:59.543" level="INFO">${HORA_ATUAL} = 2020-12-03 10:28:59.538000</msg>
+<status status="PASS" starttime="20201203 10:28:59.540" endtime="20201203 10:28:59.543"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>Hora atual: ${HORA_ATUAL.hour}\nMinuto atual: ${HORA_ATUAL.minute}\nSegundo atual: ${HORA_ATUAL.second}</arg>
+</arguments>
+<msg timestamp="20201203 10:28:59.548" level="INFO">Hora atual: 10
+Minuto atual: 28
+Segundo atual: 59</msg>
+<status status="PASS" starttime="20201203 10:28:59.543" endtime="20201203 10:28:59.549"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>"${HORA_ATUAL.second}"!="15"</arg>
+<arg>Fail</arg>
+<arg>msg=Ainda não estamos no segundo 15!!</arg>
+</arguments>
+<kw name="Fail" library="BuiltIn">
+<doc>Fails the test with the given message and optionally alters its tags.</doc>
+<arguments>
+<arg>msg=Ainda não estamos no segundo 15!!</arg>
+</arguments>
+<msg timestamp="20201203 10:28:59.556" level="FAIL">Ainda não estamos no segundo 15!!</msg>
+<status status="FAIL" starttime="20201203 10:28:59.554" endtime="20201203 10:28:59.557"></status>
+</kw>
+<status status="FAIL" starttime="20201203 10:28:59.550" endtime="20201203 10:28:59.557"></status>
+</kw>
+<status status="FAIL" starttime="20201203 10:28:59.534" endtime="20201203 10:28:59.558"></status>
+</kw>
+<kw name="Essa keyword só passa se estivermos no segundo 15!">
+<kw name="Get Current Date" library="DateTime">
+<doc>Returns current local or UTC time with an optional increment.</doc>
+<assign>
+<var>${HORA_ATUAL}</var>
+</assign>
+<msg timestamp="20201203 10:29:00.562" level="INFO">${HORA_ATUAL} = 2020-12-03 10:29:00.561</msg>
+<status status="PASS" starttime="20201203 10:29:00.560" endtime="20201203 10:29:00.562"></status>
+</kw>
+<kw name="Convert Date" library="DateTime">
+<doc>Converts between supported `date formats`.</doc>
+<arguments>
+<arg>${HORA_ATUAL}</arg>
+<arg>datetime</arg>
+</arguments>
+<assign>
+<var>${HORA_ATUAL}</var>
+</assign>
+<msg timestamp="20201203 10:29:00.565" level="INFO">${HORA_ATUAL} = 2020-12-03 10:29:00.561000</msg>
+<status status="PASS" starttime="20201203 10:29:00.562" endtime="20201203 10:29:00.565"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>Hora atual: ${HORA_ATUAL.hour}\nMinuto atual: ${HORA_ATUAL.minute}\nSegundo atual: ${HORA_ATUAL.second}</arg>
+</arguments>
+<msg timestamp="20201203 10:29:00.571" level="INFO">Hora atual: 10
+Minuto atual: 29
+Segundo atual: 0</msg>
+<status status="PASS" starttime="20201203 10:29:00.566" endtime="20201203 10:29:00.572"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>"${HORA_ATUAL.second}"!="15"</arg>
+<arg>Fail</arg>
+<arg>msg=Ainda não estamos no segundo 15!!</arg>
+</arguments>
+<kw name="Fail" library="BuiltIn">
+<doc>Fails the test with the given message and optionally alters its tags.</doc>
+<arguments>
+<arg>msg=Ainda não estamos no segundo 15!!</arg>
+</arguments>
+<msg timestamp="20201203 10:29:00.577" level="FAIL">Ainda não estamos no segundo 15!!</msg>
+<status status="FAIL" starttime="20201203 10:29:00.574" endtime="20201203 10:29:00.578"></status>
+</kw>
+<status status="FAIL" starttime="20201203 10:29:00.572" endtime="20201203 10:29:00.578"></status>
+</kw>
+<status status="FAIL" starttime="20201203 10:29:00.558" endtime="20201203 10:29:00.579"></status>
+</kw>
+<kw name="Essa keyword só passa se estivermos no segundo 15!">
+<kw name="Get Current Date" library="DateTime">
+<doc>Returns current local or UTC time with an optional increment.</doc>
+<assign>
+<var>${HORA_ATUAL}</var>
+</assign>
+<msg timestamp="20201203 10:29:01.584" level="INFO">${HORA_ATUAL} = 2020-12-03 10:29:01.583</msg>
+<status status="PASS" starttime="20201203 10:29:01.581" endtime="20201203 10:29:01.584"></status>
+</kw>
+<kw name="Convert Date" library="DateTime">
+<doc>Converts between supported `date formats`.</doc>
+<arguments>
+<arg>${HORA_ATUAL}</arg>
+<arg>datetime</arg>
+</arguments>
+<assign>
+<var>${HORA_ATUAL}</var>
+</assign>
+<msg timestamp="20201203 10:29:01.588" level="INFO">${HORA_ATUAL} = 2020-12-03 10:29:01.583000</msg>
+<status status="PASS" starttime="20201203 10:29:01.585" endtime="20201203 10:29:01.589"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>Hora atual: ${HORA_ATUAL.hour}\nMinuto atual: ${HORA_ATUAL.minute}\nSegundo atual: ${HORA_ATUAL.second}</arg>
+</arguments>
+<msg timestamp="20201203 10:29:01.594" level="INFO">Hora atual: 10
+Minuto atual: 29
+Segundo atual: 1</msg>
+<status status="PASS" starttime="20201203 10:29:01.589" endtime="20201203 10:29:01.594"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>"${HORA_ATUAL.second}"!="15"</arg>
+<arg>Fail</arg>
+<arg>msg=Ainda não estamos no segundo 15!!</arg>
+</arguments>
+<kw name="Fail" library="BuiltIn">
+<doc>Fails the test with the given message and optionally alters its tags.</doc>
+<arguments>
+<arg>msg=Ainda não estamos no segundo 15!!</arg>
+</arguments>
+<msg timestamp="20201203 10:29:01.600" level="FAIL">Ainda não estamos no segundo 15!!</msg>
+<status status="FAIL" starttime="20201203 10:29:01.597" endtime="20201203 10:29:01.600"></status>
+</kw>
+<status status="FAIL" starttime="20201203 10:29:01.595" endtime="20201203 10:29:01.600"></status>
+</kw>
+<status status="FAIL" starttime="20201203 10:29:01.579" endtime="20201203 10:29:01.601"></status>
+</kw>
+<kw name="Essa keyword só passa se estivermos no segundo 15!">
+<kw name="Get Current Date" library="DateTime">
+<doc>Returns current local or UTC time with an optional increment.</doc>
+<assign>
+<var>${HORA_ATUAL}</var>
+</assign>
+<msg timestamp="20201203 10:29:02.609" level="INFO">${HORA_ATUAL} = 2020-12-03 10:29:02.608</msg>
+<status status="PASS" starttime="20201203 10:29:02.606" endtime="20201203 10:29:02.609"></status>
+</kw>
+<kw name="Convert Date" library="DateTime">
+<doc>Converts between supported `date formats`.</doc>
+<arguments>
+<arg>${HORA_ATUAL}</arg>
+<arg>datetime</arg>
+</arguments>
+<assign>
+<var>${HORA_ATUAL}</var>
+</assign>
+<msg timestamp="20201203 10:29:02.614" level="INFO">${HORA_ATUAL} = 2020-12-03 10:29:02.608000</msg>
+<status status="PASS" starttime="20201203 10:29:02.610" endtime="20201203 10:29:02.614"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>Hora atual: ${HORA_ATUAL.hour}\nMinuto atual: ${HORA_ATUAL.minute}\nSegundo atual: ${HORA_ATUAL.second}</arg>
+</arguments>
+<msg timestamp="20201203 10:29:02.618" level="INFO">Hora atual: 10
+Minuto atual: 29
+Segundo atual: 2</msg>
+<status status="PASS" starttime="20201203 10:29:02.615" endtime="20201203 10:29:02.619"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>"${HORA_ATUAL.second}"!="15"</arg>
+<arg>Fail</arg>
+<arg>msg=Ainda não estamos no segundo 15!!</arg>
+</arguments>
+<kw name="Fail" library="BuiltIn">
+<doc>Fails the test with the given message and optionally alters its tags.</doc>
+<arguments>
+<arg>msg=Ainda não estamos no segundo 15!!</arg>
+</arguments>
+<msg timestamp="20201203 10:29:02.626" level="FAIL">Ainda não estamos no segundo 15!!</msg>
+<status status="FAIL" starttime="20201203 10:29:02.621" endtime="20201203 10:29:02.626"></status>
+</kw>
+<status status="FAIL" starttime="20201203 10:29:02.619" endtime="20201203 10:29:02.627"></status>
+</kw>
+<status status="FAIL" starttime="20201203 10:29:02.602" endtime="20201203 10:29:02.627"></status>
+</kw>
+<kw name="Essa keyword só passa se estivermos no segundo 15!">
+<kw name="Get Current Date" library="DateTime">
+<doc>Returns current local or UTC time with an optional increment.</doc>
+<assign>
+<var>${HORA_ATUAL}</var>
+</assign>
+<msg timestamp="20201203 10:29:03.634" level="INFO">${HORA_ATUAL} = 2020-12-03 10:29:03.633</msg>
+<status status="PASS" starttime="20201203 10:29:03.631" endtime="20201203 10:29:03.634"></status>
+</kw>
+<kw name="Convert Date" library="DateTime">
+<doc>Converts between supported `date formats`.</doc>
+<arguments>
+<arg>${HORA_ATUAL}</arg>
+<arg>datetime</arg>
+</arguments>
+<assign>
+<var>${HORA_ATUAL}</var>
+</assign>
+<msg timestamp="20201203 10:29:03.640" level="INFO">${HORA_ATUAL} = 2020-12-03 10:29:03.633000</msg>
+<status status="PASS" starttime="20201203 10:29:03.635" endtime="20201203 10:29:03.640"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>Hora atual: ${HORA_ATUAL.hour}\nMinuto atual: ${HORA_ATUAL.minute}\nSegundo atual: ${HORA_ATUAL.second}</arg>
+</arguments>
+<msg timestamp="20201203 10:29:03.645" level="INFO">Hora atual: 10
+Minuto atual: 29
+Segundo atual: 3</msg>
+<status status="PASS" starttime="20201203 10:29:03.641" endtime="20201203 10:29:03.646"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>"${HORA_ATUAL.second}"!="15"</arg>
+<arg>Fail</arg>
+<arg>msg=Ainda não estamos no segundo 15!!</arg>
+</arguments>
+<kw name="Fail" library="BuiltIn">
+<doc>Fails the test with the given message and optionally alters its tags.</doc>
+<arguments>
+<arg>msg=Ainda não estamos no segundo 15!!</arg>
+</arguments>
+<msg timestamp="20201203 10:29:03.652" level="FAIL">Ainda não estamos no segundo 15!!</msg>
+<status status="FAIL" starttime="20201203 10:29:03.649" endtime="20201203 10:29:03.653"></status>
+</kw>
+<status status="FAIL" starttime="20201203 10:29:03.647" endtime="20201203 10:29:03.653"></status>
+</kw>
+<status status="FAIL" starttime="20201203 10:29:03.629" endtime="20201203 10:29:03.654"></status>
+</kw>
+<kw name="Essa keyword só passa se estivermos no segundo 15!">
+<kw name="Get Current Date" library="DateTime">
+<doc>Returns current local or UTC time with an optional increment.</doc>
+<assign>
+<var>${HORA_ATUAL}</var>
+</assign>
+<msg timestamp="20201203 10:29:04.661" level="INFO">${HORA_ATUAL} = 2020-12-03 10:29:04.661</msg>
+<status status="PASS" starttime="20201203 10:29:04.658" endtime="20201203 10:29:04.661"></status>
+</kw>
+<kw name="Convert Date" library="DateTime">
+<doc>Converts between supported `date formats`.</doc>
+<arguments>
+<arg>${HORA_ATUAL}</arg>
+<arg>datetime</arg>
+</arguments>
+<assign>
+<var>${HORA_ATUAL}</var>
+</assign>
+<msg timestamp="20201203 10:29:04.666" level="INFO">${HORA_ATUAL} = 2020-12-03 10:29:04.661000</msg>
+<status status="PASS" starttime="20201203 10:29:04.662" endtime="20201203 10:29:04.666"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>Hora atual: ${HORA_ATUAL.hour}\nMinuto atual: ${HORA_ATUAL.minute}\nSegundo atual: ${HORA_ATUAL.second}</arg>
+</arguments>
+<msg timestamp="20201203 10:29:04.671" level="INFO">Hora atual: 10
+Minuto atual: 29
+Segundo atual: 4</msg>
+<status status="PASS" starttime="20201203 10:29:04.667" endtime="20201203 10:29:04.672"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>"${HORA_ATUAL.second}"!="15"</arg>
+<arg>Fail</arg>
+<arg>msg=Ainda não estamos no segundo 15!!</arg>
+</arguments>
+<kw name="Fail" library="BuiltIn">
+<doc>Fails the test with the given message and optionally alters its tags.</doc>
+<arguments>
+<arg>msg=Ainda não estamos no segundo 15!!</arg>
+</arguments>
+<msg timestamp="20201203 10:29:04.677" level="FAIL">Ainda não estamos no segundo 15!!</msg>
+<status status="FAIL" starttime="20201203 10:29:04.674" endtime="20201203 10:29:04.677"></status>
+</kw>
+<status status="FAIL" starttime="20201203 10:29:04.673" endtime="20201203 10:29:04.677"></status>
+</kw>
+<status status="FAIL" starttime="20201203 10:29:04.656" endtime="20201203 10:29:04.678"></status>
+</kw>
+<kw name="Essa keyword só passa se estivermos no segundo 15!">
+<kw name="Get Current Date" library="DateTime">
+<doc>Returns current local or UTC time with an optional increment.</doc>
+<assign>
+<var>${HORA_ATUAL}</var>
+</assign>
+<msg timestamp="20201203 10:29:05.683" level="INFO">${HORA_ATUAL} = 2020-12-03 10:29:05.682</msg>
+<status status="PASS" starttime="20201203 10:29:05.681" endtime="20201203 10:29:05.683"></status>
+</kw>
+<kw name="Convert Date" library="DateTime">
+<doc>Converts between supported `date formats`.</doc>
+<arguments>
+<arg>${HORA_ATUAL}</arg>
+<arg>datetime</arg>
+</arguments>
+<assign>
+<var>${HORA_ATUAL}</var>
+</assign>
+<msg timestamp="20201203 10:29:05.687" level="INFO">${HORA_ATUAL} = 2020-12-03 10:29:05.682000</msg>
+<status status="PASS" starttime="20201203 10:29:05.684" endtime="20201203 10:29:05.688"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>Hora atual: ${HORA_ATUAL.hour}\nMinuto atual: ${HORA_ATUAL.minute}\nSegundo atual: ${HORA_ATUAL.second}</arg>
+</arguments>
+<msg timestamp="20201203 10:29:05.693" level="INFO">Hora atual: 10
+Minuto atual: 29
+Segundo atual: 5</msg>
+<status status="PASS" starttime="20201203 10:29:05.689" endtime="20201203 10:29:05.694"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>"${HORA_ATUAL.second}"!="15"</arg>
+<arg>Fail</arg>
+<arg>msg=Ainda não estamos no segundo 15!!</arg>
+</arguments>
+<kw name="Fail" library="BuiltIn">
+<doc>Fails the test with the given message and optionally alters its tags.</doc>
+<arguments>
+<arg>msg=Ainda não estamos no segundo 15!!</arg>
+</arguments>
+<msg timestamp="20201203 10:29:05.698" level="FAIL">Ainda não estamos no segundo 15!!</msg>
+<status status="FAIL" starttime="20201203 10:29:05.696" endtime="20201203 10:29:05.699"></status>
+</kw>
+<status status="FAIL" starttime="20201203 10:29:05.694" endtime="20201203 10:29:05.700"></status>
+</kw>
+<status status="FAIL" starttime="20201203 10:29:05.679" endtime="20201203 10:29:05.701"></status>
+</kw>
+<kw name="Essa keyword só passa se estivermos no segundo 15!">
+<kw name="Get Current Date" library="DateTime">
+<doc>Returns current local or UTC time with an optional increment.</doc>
+<assign>
+<var>${HORA_ATUAL}</var>
+</assign>
+<msg timestamp="20201203 10:29:06.708" level="INFO">${HORA_ATUAL} = 2020-12-03 10:29:06.706</msg>
+<status status="PASS" starttime="20201203 10:29:06.705" endtime="20201203 10:29:06.708"></status>
+</kw>
+<kw name="Convert Date" library="DateTime">
+<doc>Converts between supported `date formats`.</doc>
+<arguments>
+<arg>${HORA_ATUAL}</arg>
+<arg>datetime</arg>
+</arguments>
+<assign>
+<var>${HORA_ATUAL}</var>
+</assign>
+<msg timestamp="20201203 10:29:06.711" level="INFO">${HORA_ATUAL} = 2020-12-03 10:29:06.706000</msg>
+<status status="PASS" starttime="20201203 10:29:06.708" endtime="20201203 10:29:06.712"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>Hora atual: ${HORA_ATUAL.hour}\nMinuto atual: ${HORA_ATUAL.minute}\nSegundo atual: ${HORA_ATUAL.second}</arg>
+</arguments>
+<msg timestamp="20201203 10:29:06.717" level="INFO">Hora atual: 10
+Minuto atual: 29
+Segundo atual: 6</msg>
+<status status="PASS" starttime="20201203 10:29:06.713" endtime="20201203 10:29:06.718"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>"${HORA_ATUAL.second}"!="15"</arg>
+<arg>Fail</arg>
+<arg>msg=Ainda não estamos no segundo 15!!</arg>
+</arguments>
+<kw name="Fail" library="BuiltIn">
+<doc>Fails the test with the given message and optionally alters its tags.</doc>
+<arguments>
+<arg>msg=Ainda não estamos no segundo 15!!</arg>
+</arguments>
+<msg timestamp="20201203 10:29:06.727" level="FAIL">Ainda não estamos no segundo 15!!</msg>
+<status status="FAIL" starttime="20201203 10:29:06.721" endtime="20201203 10:29:06.727"></status>
+</kw>
+<status status="FAIL" starttime="20201203 10:29:06.719" endtime="20201203 10:29:06.727"></status>
+</kw>
+<status status="FAIL" starttime="20201203 10:29:06.703" endtime="20201203 10:29:06.728"></status>
+</kw>
+<kw name="Essa keyword só passa se estivermos no segundo 15!">
+<kw name="Get Current Date" library="DateTime">
+<doc>Returns current local or UTC time with an optional increment.</doc>
+<assign>
+<var>${HORA_ATUAL}</var>
+</assign>
+<msg timestamp="20201203 10:29:07.735" level="INFO">${HORA_ATUAL} = 2020-12-03 10:29:07.734</msg>
+<status status="PASS" starttime="20201203 10:29:07.732" endtime="20201203 10:29:07.736"></status>
+</kw>
+<kw name="Convert Date" library="DateTime">
+<doc>Converts between supported `date formats`.</doc>
+<arguments>
+<arg>${HORA_ATUAL}</arg>
+<arg>datetime</arg>
+</arguments>
+<assign>
+<var>${HORA_ATUAL}</var>
+</assign>
+<msg timestamp="20201203 10:29:07.739" level="INFO">${HORA_ATUAL} = 2020-12-03 10:29:07.734000</msg>
+<status status="PASS" starttime="20201203 10:29:07.736" endtime="20201203 10:29:07.739"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>Hora atual: ${HORA_ATUAL.hour}\nMinuto atual: ${HORA_ATUAL.minute}\nSegundo atual: ${HORA_ATUAL.second}</arg>
+</arguments>
+<msg timestamp="20201203 10:29:07.744" level="INFO">Hora atual: 10
+Minuto atual: 29
+Segundo atual: 7</msg>
+<status status="PASS" starttime="20201203 10:29:07.740" endtime="20201203 10:29:07.744"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>"${HORA_ATUAL.second}"!="15"</arg>
+<arg>Fail</arg>
+<arg>msg=Ainda não estamos no segundo 15!!</arg>
+</arguments>
+<kw name="Fail" library="BuiltIn">
+<doc>Fails the test with the given message and optionally alters its tags.</doc>
+<arguments>
+<arg>msg=Ainda não estamos no segundo 15!!</arg>
+</arguments>
+<msg timestamp="20201203 10:29:07.751" level="FAIL">Ainda não estamos no segundo 15!!</msg>
+<status status="FAIL" starttime="20201203 10:29:07.748" endtime="20201203 10:29:07.752"></status>
+</kw>
+<status status="FAIL" starttime="20201203 10:29:07.745" endtime="20201203 10:29:07.752"></status>
+</kw>
+<status status="FAIL" starttime="20201203 10:29:07.730" endtime="20201203 10:29:07.753"></status>
+</kw>
+<kw name="Essa keyword só passa se estivermos no segundo 15!">
+<kw name="Get Current Date" library="DateTime">
+<doc>Returns current local or UTC time with an optional increment.</doc>
+<assign>
+<var>${HORA_ATUAL}</var>
+</assign>
+<msg timestamp="20201203 10:29:08.758" level="INFO">${HORA_ATUAL} = 2020-12-03 10:29:08.758</msg>
+<status status="PASS" starttime="20201203 10:29:08.756" endtime="20201203 10:29:08.758"></status>
+</kw>
+<kw name="Convert Date" library="DateTime">
+<doc>Converts between supported `date formats`.</doc>
+<arguments>
+<arg>${HORA_ATUAL}</arg>
+<arg>datetime</arg>
+</arguments>
+<assign>
+<var>${HORA_ATUAL}</var>
+</assign>
+<msg timestamp="20201203 10:29:08.762" level="INFO">${HORA_ATUAL} = 2020-12-03 10:29:08.758000</msg>
+<status status="PASS" starttime="20201203 10:29:08.759" endtime="20201203 10:29:08.762"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>Hora atual: ${HORA_ATUAL.hour}\nMinuto atual: ${HORA_ATUAL.minute}\nSegundo atual: ${HORA_ATUAL.second}</arg>
+</arguments>
+<msg timestamp="20201203 10:29:08.767" level="INFO">Hora atual: 10
+Minuto atual: 29
+Segundo atual: 8</msg>
+<status status="PASS" starttime="20201203 10:29:08.763" endtime="20201203 10:29:08.768"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>"${HORA_ATUAL.second}"!="15"</arg>
+<arg>Fail</arg>
+<arg>msg=Ainda não estamos no segundo 15!!</arg>
+</arguments>
+<kw name="Fail" library="BuiltIn">
+<doc>Fails the test with the given message and optionally alters its tags.</doc>
+<arguments>
+<arg>msg=Ainda não estamos no segundo 15!!</arg>
+</arguments>
+<msg timestamp="20201203 10:29:08.772" level="FAIL">Ainda não estamos no segundo 15!!</msg>
+<status status="FAIL" starttime="20201203 10:29:08.770" endtime="20201203 10:29:08.772"></status>
+</kw>
+<status status="FAIL" starttime="20201203 10:29:08.768" endtime="20201203 10:29:08.773"></status>
+</kw>
+<status status="FAIL" starttime="20201203 10:29:08.754" endtime="20201203 10:29:08.773"></status>
+</kw>
+<kw name="Essa keyword só passa se estivermos no segundo 15!">
+<kw name="Get Current Date" library="DateTime">
+<doc>Returns current local or UTC time with an optional increment.</doc>
+<assign>
+<var>${HORA_ATUAL}</var>
+</assign>
+<msg timestamp="20201203 10:29:09.778" level="INFO">${HORA_ATUAL} = 2020-12-03 10:29:09.777</msg>
+<status status="PASS" starttime="20201203 10:29:09.775" endtime="20201203 10:29:09.779"></status>
+</kw>
+<kw name="Convert Date" library="DateTime">
+<doc>Converts between supported `date formats`.</doc>
+<arguments>
+<arg>${HORA_ATUAL}</arg>
+<arg>datetime</arg>
+</arguments>
+<assign>
+<var>${HORA_ATUAL}</var>
+</assign>
+<msg timestamp="20201203 10:29:09.783" level="INFO">${HORA_ATUAL} = 2020-12-03 10:29:09.777000</msg>
+<status status="PASS" starttime="20201203 10:29:09.779" endtime="20201203 10:29:09.783"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>Hora atual: ${HORA_ATUAL.hour}\nMinuto atual: ${HORA_ATUAL.minute}\nSegundo atual: ${HORA_ATUAL.second}</arg>
+</arguments>
+<msg timestamp="20201203 10:29:09.788" level="INFO">Hora atual: 10
+Minuto atual: 29
+Segundo atual: 9</msg>
+<status status="PASS" starttime="20201203 10:29:09.784" endtime="20201203 10:29:09.788"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>"${HORA_ATUAL.second}"!="15"</arg>
+<arg>Fail</arg>
+<arg>msg=Ainda não estamos no segundo 15!!</arg>
+</arguments>
+<kw name="Fail" library="BuiltIn">
+<doc>Fails the test with the given message and optionally alters its tags.</doc>
+<arguments>
+<arg>msg=Ainda não estamos no segundo 15!!</arg>
+</arguments>
+<msg timestamp="20201203 10:29:09.795" level="FAIL">Ainda não estamos no segundo 15!!</msg>
+<status status="FAIL" starttime="20201203 10:29:09.792" endtime="20201203 10:29:09.795"></status>
+</kw>
+<status status="FAIL" starttime="20201203 10:29:09.789" endtime="20201203 10:29:09.795"></status>
+</kw>
+<status status="FAIL" starttime="20201203 10:29:09.773" endtime="20201203 10:29:09.796"></status>
+</kw>
+<kw name="Essa keyword só passa se estivermos no segundo 15!">
+<kw name="Get Current Date" library="DateTime">
+<doc>Returns current local or UTC time with an optional increment.</doc>
+<assign>
+<var>${HORA_ATUAL}</var>
+</assign>
+<msg timestamp="20201203 10:29:10.801" level="INFO">${HORA_ATUAL} = 2020-12-03 10:29:10.800</msg>
+<status status="PASS" starttime="20201203 10:29:10.799" endtime="20201203 10:29:10.801"></status>
+</kw>
+<kw name="Convert Date" library="DateTime">
+<doc>Converts between supported `date formats`.</doc>
+<arguments>
+<arg>${HORA_ATUAL}</arg>
+<arg>datetime</arg>
+</arguments>
+<assign>
+<var>${HORA_ATUAL}</var>
+</assign>
+<msg timestamp="20201203 10:29:10.806" level="INFO">${HORA_ATUAL} = 2020-12-03 10:29:10.800000</msg>
+<status status="PASS" starttime="20201203 10:29:10.802" endtime="20201203 10:29:10.807"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>Hora atual: ${HORA_ATUAL.hour}\nMinuto atual: ${HORA_ATUAL.minute}\nSegundo atual: ${HORA_ATUAL.second}</arg>
+</arguments>
+<msg timestamp="20201203 10:29:10.811" level="INFO">Hora atual: 10
+Minuto atual: 29
+Segundo atual: 10</msg>
+<status status="PASS" starttime="20201203 10:29:10.807" endtime="20201203 10:29:10.811"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>"${HORA_ATUAL.second}"!="15"</arg>
+<arg>Fail</arg>
+<arg>msg=Ainda não estamos no segundo 15!!</arg>
+</arguments>
+<kw name="Fail" library="BuiltIn">
+<doc>Fails the test with the given message and optionally alters its tags.</doc>
+<arguments>
+<arg>msg=Ainda não estamos no segundo 15!!</arg>
+</arguments>
+<msg timestamp="20201203 10:29:10.814" level="FAIL">Ainda não estamos no segundo 15!!</msg>
+<status status="FAIL" starttime="20201203 10:29:10.813" endtime="20201203 10:29:10.815"></status>
+</kw>
+<status status="FAIL" starttime="20201203 10:29:10.812" endtime="20201203 10:29:10.815"></status>
+</kw>
+<status status="FAIL" starttime="20201203 10:29:10.797" endtime="20201203 10:29:10.815"></status>
+</kw>
+<kw name="Essa keyword só passa se estivermos no segundo 15!">
+<kw name="Get Current Date" library="DateTime">
+<doc>Returns current local or UTC time with an optional increment.</doc>
+<assign>
+<var>${HORA_ATUAL}</var>
+</assign>
+<msg timestamp="20201203 10:29:11.821" level="INFO">${HORA_ATUAL} = 2020-12-03 10:29:11.819</msg>
+<status status="PASS" starttime="20201203 10:29:11.818" endtime="20201203 10:29:11.821"></status>
+</kw>
+<kw name="Convert Date" library="DateTime">
+<doc>Converts between supported `date formats`.</doc>
+<arguments>
+<arg>${HORA_ATUAL}</arg>
+<arg>datetime</arg>
+</arguments>
+<assign>
+<var>${HORA_ATUAL}</var>
+</assign>
+<msg timestamp="20201203 10:29:11.826" level="INFO">${HORA_ATUAL} = 2020-12-03 10:29:11.819000</msg>
+<status status="PASS" starttime="20201203 10:29:11.822" endtime="20201203 10:29:11.826"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>Hora atual: ${HORA_ATUAL.hour}\nMinuto atual: ${HORA_ATUAL.minute}\nSegundo atual: ${HORA_ATUAL.second}</arg>
+</arguments>
+<msg timestamp="20201203 10:29:11.830" level="INFO">Hora atual: 10
+Minuto atual: 29
+Segundo atual: 11</msg>
+<status status="PASS" starttime="20201203 10:29:11.826" endtime="20201203 10:29:11.831"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>"${HORA_ATUAL.second}"!="15"</arg>
+<arg>Fail</arg>
+<arg>msg=Ainda não estamos no segundo 15!!</arg>
+</arguments>
+<kw name="Fail" library="BuiltIn">
+<doc>Fails the test with the given message and optionally alters its tags.</doc>
+<arguments>
+<arg>msg=Ainda não estamos no segundo 15!!</arg>
+</arguments>
+<msg timestamp="20201203 10:29:11.837" level="FAIL">Ainda não estamos no segundo 15!!</msg>
+<status status="FAIL" starttime="20201203 10:29:11.833" endtime="20201203 10:29:11.837"></status>
+</kw>
+<status status="FAIL" starttime="20201203 10:29:11.831" endtime="20201203 10:29:11.837"></status>
+</kw>
+<status status="FAIL" starttime="20201203 10:29:11.816" endtime="20201203 10:29:11.838"></status>
+</kw>
+<kw name="Essa keyword só passa se estivermos no segundo 15!">
+<kw name="Get Current Date" library="DateTime">
+<doc>Returns current local or UTC time with an optional increment.</doc>
+<assign>
+<var>${HORA_ATUAL}</var>
+</assign>
+<msg timestamp="20201203 10:29:12.845" level="INFO">${HORA_ATUAL} = 2020-12-03 10:29:12.845</msg>
+<status status="PASS" starttime="20201203 10:29:12.843" endtime="20201203 10:29:12.846"></status>
+</kw>
+<kw name="Convert Date" library="DateTime">
+<doc>Converts between supported `date formats`.</doc>
+<arguments>
+<arg>${HORA_ATUAL}</arg>
+<arg>datetime</arg>
+</arguments>
+<assign>
+<var>${HORA_ATUAL}</var>
+</assign>
+<msg timestamp="20201203 10:29:12.849" level="INFO">${HORA_ATUAL} = 2020-12-03 10:29:12.845000</msg>
+<status status="PASS" starttime="20201203 10:29:12.846" endtime="20201203 10:29:12.849"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>Hora atual: ${HORA_ATUAL.hour}\nMinuto atual: ${HORA_ATUAL.minute}\nSegundo atual: ${HORA_ATUAL.second}</arg>
+</arguments>
+<msg timestamp="20201203 10:29:12.854" level="INFO">Hora atual: 10
+Minuto atual: 29
+Segundo atual: 12</msg>
+<status status="PASS" starttime="20201203 10:29:12.850" endtime="20201203 10:29:12.855"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>"${HORA_ATUAL.second}"!="15"</arg>
+<arg>Fail</arg>
+<arg>msg=Ainda não estamos no segundo 15!!</arg>
+</arguments>
+<kw name="Fail" library="BuiltIn">
+<doc>Fails the test with the given message and optionally alters its tags.</doc>
+<arguments>
+<arg>msg=Ainda não estamos no segundo 15!!</arg>
+</arguments>
+<msg timestamp="20201203 10:29:12.860" level="FAIL">Ainda não estamos no segundo 15!!</msg>
+<status status="FAIL" starttime="20201203 10:29:12.857" endtime="20201203 10:29:12.860"></status>
+</kw>
+<status status="FAIL" starttime="20201203 10:29:12.855" endtime="20201203 10:29:12.860"></status>
+</kw>
+<status status="FAIL" starttime="20201203 10:29:12.840" endtime="20201203 10:29:12.862"></status>
+</kw>
+<kw name="Essa keyword só passa se estivermos no segundo 15!">
+<kw name="Get Current Date" library="DateTime">
+<doc>Returns current local or UTC time with an optional increment.</doc>
+<assign>
+<var>${HORA_ATUAL}</var>
+</assign>
+<msg timestamp="20201203 10:29:13.868" level="INFO">${HORA_ATUAL} = 2020-12-03 10:29:13.867</msg>
+<status status="PASS" starttime="20201203 10:29:13.865" endtime="20201203 10:29:13.868"></status>
+</kw>
+<kw name="Convert Date" library="DateTime">
+<doc>Converts between supported `date formats`.</doc>
+<arguments>
+<arg>${HORA_ATUAL}</arg>
+<arg>datetime</arg>
+</arguments>
+<assign>
+<var>${HORA_ATUAL}</var>
+</assign>
+<msg timestamp="20201203 10:29:13.871" level="INFO">${HORA_ATUAL} = 2020-12-03 10:29:13.867000</msg>
+<status status="PASS" starttime="20201203 10:29:13.868" endtime="20201203 10:29:13.872"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>Hora atual: ${HORA_ATUAL.hour}\nMinuto atual: ${HORA_ATUAL.minute}\nSegundo atual: ${HORA_ATUAL.second}</arg>
+</arguments>
+<msg timestamp="20201203 10:29:13.877" level="INFO">Hora atual: 10
+Minuto atual: 29
+Segundo atual: 13</msg>
+<status status="PASS" starttime="20201203 10:29:13.873" endtime="20201203 10:29:13.878"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>"${HORA_ATUAL.second}"!="15"</arg>
+<arg>Fail</arg>
+<arg>msg=Ainda não estamos no segundo 15!!</arg>
+</arguments>
+<kw name="Fail" library="BuiltIn">
+<doc>Fails the test with the given message and optionally alters its tags.</doc>
+<arguments>
+<arg>msg=Ainda não estamos no segundo 15!!</arg>
+</arguments>
+<msg timestamp="20201203 10:29:13.885" level="FAIL">Ainda não estamos no segundo 15!!</msg>
+<status status="FAIL" starttime="20201203 10:29:13.881" endtime="20201203 10:29:13.885"></status>
+</kw>
+<status status="FAIL" starttime="20201203 10:29:13.878" endtime="20201203 10:29:13.885"></status>
+</kw>
+<status status="FAIL" starttime="20201203 10:29:13.862" endtime="20201203 10:29:13.887"></status>
+</kw>
+<kw name="Essa keyword só passa se estivermos no segundo 15!">
+<kw name="Get Current Date" library="DateTime">
+<doc>Returns current local or UTC time with an optional increment.</doc>
+<assign>
+<var>${HORA_ATUAL}</var>
+</assign>
+<msg timestamp="20201203 10:29:14.893" level="INFO">${HORA_ATUAL} = 2020-12-03 10:29:14.892</msg>
+<status status="PASS" starttime="20201203 10:29:14.890" endtime="20201203 10:29:14.893"></status>
+</kw>
+<kw name="Convert Date" library="DateTime">
+<doc>Converts between supported `date formats`.</doc>
+<arguments>
+<arg>${HORA_ATUAL}</arg>
+<arg>datetime</arg>
+</arguments>
+<assign>
+<var>${HORA_ATUAL}</var>
+</assign>
+<msg timestamp="20201203 10:29:14.897" level="INFO">${HORA_ATUAL} = 2020-12-03 10:29:14.892000</msg>
+<status status="PASS" starttime="20201203 10:29:14.894" endtime="20201203 10:29:14.897"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>Hora atual: ${HORA_ATUAL.hour}\nMinuto atual: ${HORA_ATUAL.minute}\nSegundo atual: ${HORA_ATUAL.second}</arg>
+</arguments>
+<msg timestamp="20201203 10:29:14.901" level="INFO">Hora atual: 10
+Minuto atual: 29
+Segundo atual: 14</msg>
+<status status="PASS" starttime="20201203 10:29:14.897" endtime="20201203 10:29:14.901"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>"${HORA_ATUAL.second}"!="15"</arg>
+<arg>Fail</arg>
+<arg>msg=Ainda não estamos no segundo 15!!</arg>
+</arguments>
+<kw name="Fail" library="BuiltIn">
+<doc>Fails the test with the given message and optionally alters its tags.</doc>
+<arguments>
+<arg>msg=Ainda não estamos no segundo 15!!</arg>
+</arguments>
+<msg timestamp="20201203 10:29:14.907" level="FAIL">Ainda não estamos no segundo 15!!</msg>
+<status status="FAIL" starttime="20201203 10:29:14.905" endtime="20201203 10:29:14.907"></status>
+</kw>
+<status status="FAIL" starttime="20201203 10:29:14.902" endtime="20201203 10:29:14.908"></status>
+</kw>
+<status status="FAIL" starttime="20201203 10:29:14.888" endtime="20201203 10:29:14.908"></status>
+</kw>
+<kw name="Essa keyword só passa se estivermos no segundo 15!">
+<kw name="Get Current Date" library="DateTime">
+<doc>Returns current local or UTC time with an optional increment.</doc>
+<assign>
+<var>${HORA_ATUAL}</var>
+</assign>
+<msg timestamp="20201203 10:29:15.915" level="INFO">${HORA_ATUAL} = 2020-12-03 10:29:15.914</msg>
+<status status="PASS" starttime="20201203 10:29:15.912" endtime="20201203 10:29:15.915"></status>
+</kw>
+<kw name="Convert Date" library="DateTime">
+<doc>Converts between supported `date formats`.</doc>
+<arguments>
+<arg>${HORA_ATUAL}</arg>
+<arg>datetime</arg>
+</arguments>
+<assign>
+<var>${HORA_ATUAL}</var>
+</assign>
+<msg timestamp="20201203 10:29:15.919" level="INFO">${HORA_ATUAL} = 2020-12-03 10:29:15.914000</msg>
+<status status="PASS" starttime="20201203 10:29:15.915" endtime="20201203 10:29:15.919"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>Hora atual: ${HORA_ATUAL.hour}\nMinuto atual: ${HORA_ATUAL.minute}\nSegundo atual: ${HORA_ATUAL.second}</arg>
+</arguments>
+<msg timestamp="20201203 10:29:15.925" level="INFO">Hora atual: 10
+Minuto atual: 29
+Segundo atual: 15</msg>
+<status status="PASS" starttime="20201203 10:29:15.920" endtime="20201203 10:29:15.925"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>"${HORA_ATUAL.second}"!="15"</arg>
+<arg>Fail</arg>
+<arg>msg=Ainda não estamos no segundo 15!!</arg>
+</arguments>
+<status status="PASS" starttime="20201203 10:29:15.926" endtime="20201203 10:29:15.928"></status>
+</kw>
+<status status="PASS" starttime="20201203 10:29:15.910" endtime="20201203 10:29:15.928"></status>
+</kw>
+<status status="PASS" starttime="20201203 10:28:21.746" endtime="20201203 10:29:15.928"></status>
+</kw>
+<status status="PASS" starttime="20201203 10:28:21.745" endtime="20201203 10:29:15.929"></status>
+</kw>
+<kw name="Teardown do meu teste" type="teardown">
+<kw name="Run Keyword If Timeout Occurred" library="BuiltIn">
+<doc>Runs the given keyword if either a test or a keyword timeout has occurred.</doc>
+<arguments>
+<arg>Log</arg>
+<arg>Esse teste demorou demais, possível problema de performance!</arg>
+</arguments>
+<status status="PASS" starttime="20201203 10:29:15.934" endtime="20201203 10:29:15.935"></status>
+</kw>
+<status status="PASS" starttime="20201203 10:29:15.932" endtime="20201203 10:29:15.936"></status>
+</kw>
+<timeout value="2 minutes"></timeout>
+<status status="PASS" starttime="20201203 10:28:21.744" endtime="20201203 10:29:15.937" critical="yes"></status>
+</test>
+<status status="FAIL" starttime="20201203 10:28:19.705" endtime="20201203 10:29:15.945"></status>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="1">Critical Tests</stat>
+<stat pass="1" fail="1">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="1" id="s1" name="Esperas">Esperas</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

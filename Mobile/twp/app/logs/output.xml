@@ -1,0 +1,287 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 3.2.1 (Python 3.8.3 on win32)" generated="20210210 11:18:29.682" rpa="false">
+<suite id="s1" name="Complete" source="C:\qaninja\twp\app\tests\complete.robot">
+<test id="s1-t1" name="Open">
+<kw name="Set Appium Timeout" library="AppiumLibrary">
+<doc>Sets the timeout in seconds used by various keywords.</doc>
+<arguments>
+<arg>10</arg>
+</arguments>
+<status status="PASS" starttime="20210210 11:18:29.984" endtime="20210210 11:18:29.985"></status>
+</kw>
+<kw name="Open Application" library="AppiumLibrary">
+<doc>Opens a new application to given Appium server.
+Capabilities of appium server, Android and iOS,
+Please check https://github.com/appium/appium/blob/master/docs/en/writing-running-appium/server-args.md
+| *Option*            | *Man.* | *Description*     |
+| remote_url          | Yes    | Appium server url |
+| alias               | no     | alias             |</doc>
+<arguments>
+<arg>http://localhost:4723/wd/hub</arg>
+<arg>automationName=UiAutomator2</arg>
+<arg>platformName=Android</arg>
+<arg>deviceName=Android Emulator</arg>
+<arg>app=${EXECDIR}/eteorika.apk</arg>
+</arguments>
+<status status="PASS" starttime="20210210 11:18:29.986" endtime="20210210 11:18:44.280"></status>
+</kw>
+<status status="PASS" starttime="20210210 11:18:29.983" endtime="20210210 11:18:44.286" critical="yes"></status>
+</test>
+<test id="s1-t2" name="Login">
+<kw name="Start Screen Recording" library="AppiumLibrary">
+<doc>Starts an asynchronous Screen Recording for the current open application.</doc>
+<status status="PASS" starttime="20210210 11:18:44.296" endtime="20210210 11:18:55.563"></status>
+</kw>
+<kw name="Wait Until Page Contains" library="AppiumLibrary">
+<doc>Waits until `text` appears on current page.</doc>
+<arguments>
+<arg>Bem Vindo ao e-TEÓRIKA Aula Virtual</arg>
+</arguments>
+<status status="PASS" starttime="20210210 11:18:55.564" endtime="20210210 11:18:55.763"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>class=android.widget.Spinner</arg>
+</arguments>
+<status status="PASS" starttime="20210210 11:18:55.764" endtime="20210210 11:18:55.834"></status>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>id=android:id/text1</arg>
+</arguments>
+<msg timestamp="20210210 11:18:55.836" level="INFO">Clicking element 'id=android:id/text1'.</msg>
+<status status="PASS" starttime="20210210 11:18:55.834" endtime="20210210 11:18:55.903"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>class=android.widget.CheckedTextView</arg>
+</arguments>
+<status status="PASS" starttime="20210210 11:18:55.904" endtime="20210210 11:18:57.192"></status>
+</kw>
+<kw name="Click Text" library="AppiumLibrary">
+<doc>Click text identified by ``text``.</doc>
+<arguments>
+<arg>Bahia</arg>
+</arguments>
+<status status="PASS" starttime="20210210 11:18:57.193" endtime="20210210 11:18:58.242"></status>
+</kw>
+<kw name="Input Text" library="AppiumLibrary">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>${CPF}</arg>
+<arg>123.456.789-00</arg>
+</arguments>
+<msg timestamp="20210210 11:18:58.246" level="INFO">Typing text '123.456.789-00' into text field 'xpath=//android.widget.EditText[contains(@text,'CPF')]'</msg>
+<status status="PASS" starttime="20210210 11:18:58.244" endtime="20210210 11:18:58.380"></status>
+</kw>
+<kw name="Click Text" library="AppiumLibrary">
+<doc>Click text identified by ``text``.</doc>
+<arguments>
+<arg>Senha</arg>
+</arguments>
+<status status="PASS" starttime="20210210 11:18:58.382" endtime="20210210 11:18:58.972"></status>
+</kw>
+<kw name="Input Text" library="AppiumLibrary">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>${SENHA}</arg>
+<arg>aa123456</arg>
+</arguments>
+<msg timestamp="20210210 11:18:58.978" level="INFO">Typing text 'aa123456' into text field 'xpath=//android.widget.EditText[contains(@text,'Senha')]'</msg>
+<status status="PASS" starttime="20210210 11:18:58.973" endtime="20210210 11:19:01.228"></status>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>${TECLADO}</arg>
+</arguments>
+<msg timestamp="20210210 11:19:01.233" level="INFO">Clicking element 'xpath=/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout'.</msg>
+<status status="PASS" starttime="20210210 11:19:01.230" endtime="20210210 11:19:01.867"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>${BOTAO}</arg>
+</arguments>
+<status status="PASS" starttime="20210210 11:19:01.868" endtime="20210210 11:19:02.804"></status>
+</kw>
+<kw name="Click Text" library="AppiumLibrary">
+<doc>Click text identified by ``text``.</doc>
+<arguments>
+<arg>Entrar</arg>
+</arguments>
+<status status="PASS" starttime="20210210 11:19:02.805" endtime="20210210 11:19:03.188"></status>
+</kw>
+<kw name="Wait Until Page Contains" library="AppiumLibrary">
+<doc>Waits until `text` appears on current page.</doc>
+<arguments>
+<arg>VIDEOAULA EM ANDAMENTO.</arg>
+</arguments>
+<status status="PASS" starttime="20210210 11:19:03.189" endtime="20210210 11:19:08.528"></status>
+</kw>
+<status status="PASS" starttime="20210210 11:18:44.295" endtime="20210210 11:19:08.528" critical="yes"></status>
+</test>
+<test id="s1-t3" name="Validando Nome Aluno">
+<kw name="Wait Until Page Contains" library="AppiumLibrary">
+<doc>Waits until `text` appears on current page.</doc>
+<arguments>
+<arg>GUILHERME SEDASSARI</arg>
+</arguments>
+<status status="PASS" starttime="20210210 11:19:08.532" endtime="20210210 11:19:08.628"></status>
+</kw>
+<status status="PASS" starttime="20210210 11:19:08.531" endtime="20210210 11:19:08.628" critical="yes"></status>
+</test>
+<test id="s1-t4" name="Validando CPF Aluno">
+<kw name="Wait Until Page Contains" library="AppiumLibrary">
+<doc>Waits until `text` appears on current page.</doc>
+<arguments>
+<arg>123.456.789-00</arg>
+</arguments>
+<status status="PASS" starttime="20210210 11:19:08.632" endtime="20210210 11:19:08.691"></status>
+</kw>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20210210 11:19:09.019" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="appium-screenshot-1.png"&gt;&lt;img src="appium-screenshot-1.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20210210 11:19:08.691" endtime="20210210 11:19:09.020"></status>
+</kw>
+<status status="PASS" starttime="20210210 11:19:08.631" endtime="20210210 11:19:09.020" critical="yes"></status>
+</test>
+<test id="s1-t5" name="Botao Entrar">
+<kw name="Click Element" library="AppiumLibrary">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>${BTNENTRAR}</arg>
+</arguments>
+<msg timestamp="20210210 11:19:09.026" level="INFO">Clicking element 'xpath=/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[2]/android.widget.ImageView'.</msg>
+<status status="PASS" starttime="20210210 11:19:09.024" endtime="20210210 11:19:09.103"></status>
+</kw>
+<kw name="Wait Until Page Contains" library="AppiumLibrary">
+<doc>Waits until `text` appears on current page.</doc>
+<arguments>
+<arg>Atenção</arg>
+</arguments>
+<status status="PASS" starttime="20210210 11:19:09.104" endtime="20210210 11:19:10.002"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>id=android:id/parentPanel</arg>
+</arguments>
+<status status="PASS" starttime="20210210 11:19:10.003" endtime="20210210 11:19:10.069"></status>
+</kw>
+<status status="PASS" starttime="20210210 11:19:09.023" endtime="20210210 11:19:10.070" critical="yes"></status>
+</test>
+<test id="s1-t6" name="Botao Ok">
+<kw name="Click Element" library="AppiumLibrary">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>id=android:id/button1</arg>
+</arguments>
+<msg timestamp="20210210 11:19:10.080" level="INFO">Clicking element 'id=android:id/button1'.</msg>
+<status status="PASS" starttime="20210210 11:19:10.078" endtime="20210210 11:19:10.132"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>class=android.view.ViewGroup</arg>
+</arguments>
+<status status="PASS" starttime="20210210 11:19:10.132" endtime="20210210 11:19:11.138"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>5</arg>
+</arguments>
+<msg timestamp="20210210 11:19:16.140" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20210210 11:19:11.138" endtime="20210210 11:19:16.140"></status>
+</kw>
+<kw name="Input Text" library="AppiumLibrary">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>xpath=//android.widget.EditText[contains(@text,'user@domain.com')]</arg>
+<arg>ba3</arg>
+</arguments>
+<msg timestamp="20210210 11:19:16.142" level="INFO">Typing text 'ba3' into text field 'xpath=//android.widget.EditText[contains(@text,'user@domain.com')]'</msg>
+<status status="PASS" starttime="20210210 11:19:16.140" endtime="20210210 11:19:16.253"></status>
+</kw>
+<kw name="Input Text" library="AppiumLibrary">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>xpath=//android.widget.EditText[contains(@text,'user password')]</arg>
+<arg>xxxxxx</arg>
+</arguments>
+<msg timestamp="20210210 11:19:16.257" level="INFO">Typing text 'xxxxxx' into text field 'xpath=//android.widget.EditText[contains(@text,'user password')]'</msg>
+<status status="PASS" starttime="20210210 11:19:16.254" endtime="20210210 11:19:17.325"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>class=android.view.ViewGroup</arg>
+</arguments>
+<status status="PASS" starttime="20210210 11:19:17.327" endtime="20210210 11:19:17.828"></status>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>${BTNTECLADO}</arg>
+</arguments>
+<msg timestamp="20210210 11:19:17.830" level="INFO">Clicking element 'xpath=/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup[1]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[1]/android.view.ViewGroup'.</msg>
+<status status="PASS" starttime="20210210 11:19:17.828" endtime="20210210 11:19:17.914"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>5</arg>
+</arguments>
+<msg timestamp="20210210 11:19:22.915" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20210210 11:19:17.914" endtime="20210210 11:19:22.915"></status>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>xpath=//android.widget.TextView[contains(@text,'Ok')]</arg>
+</arguments>
+<msg timestamp="20210210 11:19:22.918" level="INFO">Clicking element 'xpath=//android.widget.TextView[contains(@text,'Ok')]'.</msg>
+<status status="PASS" starttime="20210210 11:19:22.916" endtime="20210210 11:19:22.993"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>5</arg>
+</arguments>
+<msg timestamp="20210210 11:19:27.996" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20210210 11:19:22.994" endtime="20210210 11:19:27.996"></status>
+</kw>
+<kw name="Stop Screen Recording" library="AppiumLibrary">
+<doc>Gathers the output from the previously started screen recording              to a media file, then embeds it to the log.html(Android Only).</doc>
+<msg timestamp="20210210 11:19:30.490" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="appium-screenrecord-1.mp4"&gt;&lt;video width="800px" controls&gt;&lt;source src="appium-screenrecord-1.mp4" type="video/mp4"&gt;&lt;/video&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20210210 11:19:27.996" endtime="20210210 11:19:30.491"></status>
+</kw>
+<status status="PASS" starttime="20210210 11:19:10.076" endtime="20210210 11:19:30.494" critical="yes"></status>
+</test>
+<test id="s1-t7" name="Fechando a Aplicacao">
+<kw name="Close Application" library="AppiumLibrary">
+<doc>Closes the current application and also close webdriver session.</doc>
+<status status="PASS" starttime="20210210 11:19:30.578" endtime="20210210 11:19:31.724"></status>
+</kw>
+<status status="PASS" starttime="20210210 11:19:30.576" endtime="20210210 11:19:31.759" critical="yes"></status>
+</test>
+<status status="PASS" starttime="20210210 11:18:29.685" endtime="20210210 11:19:31.779"></status>
+</suite>
+<statistics>
+<total>
+<stat pass="7" fail="0">Critical Tests</stat>
+<stat pass="7" fail="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="7" fail="0" id="s1" name="Complete">Complete</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
