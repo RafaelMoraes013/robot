@@ -1,8 +1,8 @@
 *** Settings ***
 Library     SeleniumLibrary
 
-*** Variables
-${url}                   https://www.e-presenca.com.br     
+*** Variables *** 
+${url}                   https://gestorpedagogico.grupocriar.com.br/livro/dashboard     
 
 *** Keywords
 Inicio Sessao
@@ -11,4 +11,5 @@ Inicio Sessao
 
 Encerra Sessao
             Capture Page Screenshot
-            Close Browser
+            Close Browser 
+            Close Browser 
