@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 3.2.1 (Python 3.8.3 on win32)" generated="20220321 17:01:58.313" rpa="false">
+<suite id="s1" name="Login" source="C:\Rafael\Robot\tests\login.robot">
+<test id="s1-t1" name="Login com sucesso E-Teorika">
+<kw name="Inicio Sessao" library="base" type="setup">
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<arguments>
+<arg>${url}</arg>
+<arg>chrome</arg>
+</arguments>
+<msg timestamp="20220321 17:01:58.518" level="INFO">Opening browser 'chrome' to base url 'https://www.e-presenca.com.br'.</msg>
+<status status="PASS" starttime="20220321 17:01:58.518" endtime="20220321 17:02:02.828"></status>
+</kw>
+<kw name="Set Window Size" library="SeleniumLibrary">
+<doc>Sets current windows size to given ``width`` and ``height``.</doc>
+<arguments>
+<arg>1200</arg>
+<arg>800</arg>
+</arguments>
+<status status="PASS" starttime="20220321 17:02:02.828" endtime="20220321 17:02:02.955"></status>
+</kw>
+<status status="PASS" starttime="20220321 17:01:58.518" endtime="20220321 17:02:02.955"></status>
+</kw>
+<kw name="Go To" library="SeleniumLibrary">
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<arguments>
+<arg>${url}/site/login/e-teorika</arg>
+</arguments>
+<msg timestamp="20220321 17:02:02.956" level="INFO">Opening url 'https://www.e-presenca.com.br/site/login/e-teorika'</msg>
+<status status="PASS" starttime="20220321 17:02:02.956" endtime="20220321 17:02:06.524"></status>
+</kw>
+<kw name="Set Selenium Implicit Wait" library="SeleniumLibrary">
+<doc>Sets the implicit wait value used by Selenium.</doc>
+<arguments>
+<arg>5</arg>
+</arguments>
+<status status="PASS" starttime="20220321 17:02:06.525" endtime="20220321 17:02:06.526"></status>
+</kw>
+<kw name="Select From List By Label" library="SeleniumLibrary">
+<doc>Selects options from selection list ``locator`` by ``labels``.</doc>
+<arguments>
+<arg>id:entidade</arg>
+<arg>CFC</arg>
+</arguments>
+<msg timestamp="20220321 17:02:06.526" level="INFO">Selecting options from selection list 'id:entidade' by label CFC.</msg>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20220321 17:02:11.653" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-5.png"&gt;&lt;img src="selenium-screenshot-5.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20220321 17:02:11.533" endtime="20220321 17:02:11.653"></status>
+</kw>
+<msg timestamp="20220321 17:02:11.653" level="FAIL">List with locator 'id:entidade' not found.</msg>
+<status status="FAIL" starttime="20220321 17:02:06.526" endtime="20220321 17:02:11.653"></status>
+</kw>
+<kw name="Encerra Sessao" library="base" type="teardown">
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20220321 17:02:11.768" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-6.png"&gt;&lt;img src="selenium-screenshot-6.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20220321 17:02:11.653" endtime="20220321 17:02:11.768"></status>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20220321 17:02:11.768" endtime="20220321 17:02:14.033"></status>
+</kw>
+<status status="PASS" starttime="20220321 17:02:11.653" endtime="20220321 17:02:14.033"></status>
+</kw>
+<status status="FAIL" starttime="20220321 17:01:58.518" endtime="20220321 17:02:14.033" critical="yes">List with locator 'id:entidade' not found.</status>
+</test>
+<test id="s1-t2" name="Login invalido">
+<kw name="Inicio Sessao" library="base" type="setup">
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<arguments>
+<arg>${url}</arg>
+<arg>chrome</arg>
+</arguments>
+<msg timestamp="20220321 17:02:14.033" level="INFO">Opening browser 'chrome' to base url 'https://www.e-presenca.com.br'.</msg>
+<status status="PASS" starttime="20220321 17:02:14.033" endtime="20220321 17:02:21.279"></status>
+</kw>
+<kw name="Set Window Size" library="SeleniumLibrary">
+<doc>Sets current windows size to given ``width`` and ``height``.</doc>
+<arguments>
+<arg>1200</arg>
+<arg>800</arg>
+</arguments>
+<status status="PASS" starttime="20220321 17:02:21.279" endtime="20220321 17:02:21.400"></status>
+</kw>
+<status status="PASS" starttime="20220321 17:02:14.033" endtime="20220321 17:02:21.400"></status>
+</kw>
+<kw name="Go To" library="SeleniumLibrary">
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<arguments>
+<arg>${url}/site/login/e-teorika</arg>
+</arguments>
+<msg timestamp="20220321 17:02:21.401" level="INFO">Opening url 'https://www.e-presenca.com.br/site/login/e-teorika'</msg>
+<status status="PASS" starttime="20220321 17:02:21.401" endtime="20220321 17:02:26.432"></status>
+</kw>
+<kw name="Set Selenium Implicit Wait" library="SeleniumLibrary">
+<doc>Sets the implicit wait value used by Selenium.</doc>
+<arguments>
+<arg>5</arg>
+</arguments>
+<status status="PASS" starttime="20220321 17:02:26.433" endtime="20220321 17:02:26.435"></status>
+</kw>
+<kw name="Select From List By Label" library="SeleniumLibrary">
+<doc>Selects options from selection list ``locator`` by ``labels``.</doc>
+<arguments>
+<arg>id:entidade</arg>
+<arg>CFC</arg>
+</arguments>
+<msg timestamp="20220321 17:02:26.435" level="INFO">Selecting options from selection list 'id:entidade' by label CFC.</msg>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20220321 17:02:31.588" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-7.png"&gt;&lt;img src="selenium-screenshot-7.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20220321 17:02:31.469" endtime="20220321 17:02:31.588"></status>
+</kw>
+<msg timestamp="20220321 17:02:31.588" level="FAIL">List with locator 'id:entidade' not found.</msg>
+<status status="FAIL" starttime="20220321 17:02:26.435" endtime="20220321 17:02:31.588"></status>
+</kw>
+<kw name="Encerra Sessao" library="base" type="teardown">
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20220321 17:02:31.703" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-8.png"&gt;&lt;img src="selenium-screenshot-8.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20220321 17:02:31.589" endtime="20220321 17:02:31.703"></status>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20220321 17:02:31.703" endtime="20220321 17:02:33.863"></status>
+</kw>
+<status status="PASS" starttime="20220321 17:02:31.589" endtime="20220321 17:02:33.863"></status>
+</kw>
+<status status="FAIL" starttime="20220321 17:02:14.033" endtime="20220321 17:02:33.863" critical="yes">List with locator 'id:entidade' not found.</status>
+</test>
+<status status="FAIL" starttime="20220321 17:01:58.313" endtime="20220321 17:02:33.863"></status>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="2">Critical Tests</stat>
+<stat pass="0" fail="2">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="0" fail="2" id="s1" name="Login">Login</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
